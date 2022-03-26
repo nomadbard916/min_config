@@ -258,7 +258,12 @@ if ! which zsystem &> /dev/null || zsystem flock -t 1 $lockfile; then
 fi
 
 # ENABLE_CORRECTION="true"
-
+# fix for navigation keys in JetBrains terminal
+if [[ "$TERMINAL_EMULATOR" == "JetBrains-JediTerm" ]]; then
+  bindkey "∫" backward-word # Option-b
+  bindkey "ƒ" forward-word # Option-f
+  bindkey "∂" delete-word # Option-d
+fi
 
 # for zsh built-in completion
 # zstyle ':completion:*' list-prompt   ''
@@ -269,7 +274,6 @@ fi
 
 # remove any calls to compinit as zsh-autocomplete suggests
 # autoload -Uz compinit && compinit # built-in one
-# TODO: enable it in ubuntu
 skip_global_compinit=1
 
 # use ag for FZF and ignore some files 
