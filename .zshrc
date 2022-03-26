@@ -6,8 +6,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 LANG='en_US.UTF-8'
-HISTSIZE=50000
-SAVEHIST=50000
+
+# use bash default value for history
+HISTSIZE=1000
+SAVEHIST=2000
 HISTFILE=~/.zsh_history
 
 # sane zplug installation defaults
@@ -125,8 +127,6 @@ setopt no_list_ambiguous
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-
-
 # full plugin set
 # plugins=(
 # # plugins with installable packages
@@ -173,16 +173,14 @@ zplug "plugins/z", from:oh-my-zsh
 zplug "plugins/command-not-found", from:oh-my-zsh
 zplug "plugins/common-aliases", from:oh-my-zsh
 zplug "plugins/safe-paste", from:oh-my-zsh
-zplug "plugins/web-search", from:oh-my-zsh
 zplug "plugins/extract", from:oh-my-zsh
 zplug "plugins/copypath", from:oh-my-zsh
 # terminal
-zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "plugins/colorize", from:oh-my-zsh
 zplug "plugins/copybuffer", from:oh-my-zsh
 # systematic
 zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/svn", from:oh-my-zsh # dummy plugin to supress error msg only 
+# zplug "plugins/svn", from:oh-my-zsh # dummy plugin to supress error msg only 
 # environments
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/docker-compose", from:oh-my-zsh
@@ -193,7 +191,7 @@ zplug "plugins/laravel", from:oh-my-zsh
 # Python
 zplug "plugins/python", from:oh-my-zsh
 zplug "plugins/pip", from:oh-my-zsh
-zplug "plugins/pippipenv", from:oh-my-zsh
+zplug "plugins/pipenv", from:oh-my-zsh
 zplug "plugins/poetry", from:oh-my-zsh
 
 # zsh installable plugins
@@ -202,7 +200,7 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "MichaelAquilina/zsh-you-should-use"
 zplug "marlonrichert/zsh-autocomplete"
 zplug "Tarrasch/zsh-autoenv"
-zplug "hlissner/zsh-autopair"
+# zplug "hlissner/zsh-autopair" # maybe I never notice it whenever triggered
 
 # Install packages that have not been installed yet
 if ! zplug check --verbose; then
@@ -263,13 +261,16 @@ fi
 
 
 # for zsh built-in completion
-zstyle ':completion:*' list-prompt   ''
-zstyle ':completion:*' select-prompt ''
-# complete with a nicer menu, but it may be in conflict with auto suggestion
+# zstyle ':completion:*' list-prompt   ''
+# zstyle ':completion:*' select-prompt ''
+# # complete with a nicer menu, but it may be in conflict with auto suggestion
 # zstyle ':completion:*' menu yes select 
 
 
-autoload -Uz compinit && compinit # built-in one
+# remove any calls to compinit as zsh-autocomplete suggests
+# autoload -Uz compinit && compinit # built-in one
+# TODO: enable it in ubuntu
+skip_global_compinit=1
 
 # use ag for FZF and ignore some files 
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
@@ -339,7 +340,7 @@ alias zshrc_apply="cp ~/.zshrc ~/.zshrc.bak; cp ~/Dropbox/.zshrc ~/.zshrc"
 alias svim_install='git clone https://github.com/SpaceVim/SpaceVim.git ~/.SpaceVim' 
 alias svim='vim -u ~/.SpaceVim/vimrc'
 
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
