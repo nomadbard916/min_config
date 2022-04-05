@@ -251,6 +251,13 @@ call plug#end()
 " Plugin settings
 " ---
 
+" + ALE settings.it's the core for linting and LSP features.
+" only do linting when file is saved, as vim is often used as code reader.
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_enter = 0 
+
+
 " + custom themes must be put here after plugins are called
 " If you have vim >=8.0 or Neovim >= 0.1.5
 if (has("termguicolors"))
