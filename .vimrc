@@ -80,7 +80,8 @@ endif
 " ---
 syntax on
 
-set number
+" use hybrid relative number
+set number relativenumber
 set ruler
 set textwidth=80
 set wrap
@@ -214,6 +215,9 @@ Plug 'webdevel/tabulous'
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 " let vim set project root as cwd automatically
 Plug 'airblade/vim-rooter'
+" automatically toggle absolute number for unfocused buffer 
+" when relativenumber enabled.
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 
 " + PHP-specific plugins
