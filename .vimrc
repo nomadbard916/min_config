@@ -218,6 +218,8 @@ Plug 'airblade/vim-rooter'
 " automatically toggle absolute number for unfocused buffer 
 " when relativenumber enabled.
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+" let vim able to open file by line, e.g. vim ~/.vimrc:20
+Plug 'bogado/file-line'
 
 
 " + PHP-specific plugins
