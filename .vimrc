@@ -237,7 +237,7 @@ Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php'}
 " Plug 'adoy/vim-php-refactoring-toolbox'
 
 " + Python specific plugins
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+" Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python'}
 
 
@@ -410,5 +410,5 @@ autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
 
 " + python-mode settings
-let g:pymode_options_max_line_length = 88 " use black's rule
-let g:pymode_options_colorcolumn=1
+" let g:pymode_options_max_line_length = 88 " use black's rule
+" let g:pymode_options_colorcolumn=1
