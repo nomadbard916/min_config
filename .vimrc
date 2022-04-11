@@ -326,9 +326,9 @@ nnoremap <leader>fr :NERDTreeFind<Enter>
 " close vim when there's only NERDTree left
 autocmd bufenter + if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" + tag settings
+" + tag and symbol settings
 " use tagbar for code Outline
-nnoremap <leader>o :TagbarToggle<Enter>
+" nnoremap <leader>o :TagbarToggle<Enter>
 " put tags into dedicated folder
 let s:vim_tags = expand('~/.cache/tags')
 let g:gutentags_cache_dir = s:vim_tags
@@ -336,6 +336,14 @@ let g:gutentags_cache_dir = s:vim_tags
 if !isdirectory(s:vim_tags)
    silent! call mkdir(s:vim_tags, 'p')
 endif
+
+" vista settings
+let g:vista_executive_for = {
+    \ 'php': 'vim_lsp',
+    \ 'python': 'vim_lsp',
+\ }
+let g:vista_ignore_kinds = ['Variable']
+nnoremap <leader>o :Vista!!<cr>
 
 " + gutentags config
 let g:gutentags_project_root = ['.root',  '.git', '.project', '.vscode', '.idea','package.json', 'composer.json']
