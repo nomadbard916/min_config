@@ -277,6 +277,10 @@ inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 imap <c-space> <Plug>(asyncomplete_force_refresh)
 
 
+" gh and gd
+nnoremap gh :LspHover<Enter>
+nnoremap gd :LspDefinition<Enter>
+ 
 " + custom themes must be put here after plugins are called
 " If you have vim >=8.0 or Neovim >= 0.1.5
 if (has("termguicolors"))
