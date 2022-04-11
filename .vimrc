@@ -175,6 +175,15 @@ let &t_kD = "\x1b[3~""]"
 " plugins 
 " ---
 call plug#begin('~/.vim/plugged')
+
+" Plug 'dense-analysis/ale'
+" + lsp plugins 
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+
 Plug 'kamykn/spelunker.vim'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'editorconfig/editorconfig-vim'
@@ -198,7 +207,6 @@ Plug 'jbgutierrez/vim-better-comments'
 Plug 'honza/vim-snippets'
 Plug 'terryma/vim-expand-region'
 Plug 'vim-scripts/python_match.vim'
-Plug 'dense-analysis/ale'
 Plug 'luochen1990/rainbow'
 Plug 'gregsexton/MatchTag'
 Plug 'machakann/vim-highlightedyank'
@@ -220,11 +228,12 @@ Plug 'airblade/vim-rooter'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 " let vim able to open file by line, e.g. vim ~/.vimrc:20
 Plug 'bogado/file-line'
+Plug 'liuchengxu/vista.vim'
 
 
 " + PHP-specific plugins
 Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php'}
-Plug 'phpactor/phpactor', {'for': 'php', 'tag': '+', 'do': 'composer install --no-dev -o'}
+" Plug 'phpactor/phpactor', {'for': 'php', 'tag': '+', 'do': 'composer install --no-dev -o'}
 " Plug 'adoy/vim-php-refactoring-toolbox'
 
 " + Python specific plugins
@@ -259,9 +268,13 @@ call plug#end()
 
 " + ALE settings.it's the core for linting and LSP features.
 " only do linting when file is saved, as vim is often used as code reader.
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_insert_leave = 0
-let g:ale_lint_on_enter = 0 
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_insert_leave = 0
+" let g:ale_lint_on_enter = 0 
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+imap <c-space> <Plug>(asyncomplete_force_refresh)
 
 
 " + custom themes must be put here after plugins are called
@@ -367,8 +380,8 @@ imap <C-_> <Esc><Plug>CommentaryLine
 
 " + PHP specific settings
 " gh and gd
-autocmd Filetype php nnoremap gh :PhpactorHover<Enter>
-autocmd Filetype php nnoremap gd :PhpactorGotoDefinition<Enter>
+" autocmd Filetype php nnoremap gh :PhpactorHover<Enter>
+" autocmd Filetype php nnoremap gd :PhpactorGotoDefinition<Enter>
 
 " PHP namespace: 'leader u' to insert 'Use' and 'leader e' to expand full name
 function! IPhpInsertUse()
