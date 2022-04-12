@@ -97,7 +97,7 @@ zinit snippet OMZP::poetry
 zinit ice lucid wait='5'; zinit light zsh-users/zsh-syntax-highlighting
 zinit ice lucid wait='0' atload='_zsh_autosuggest_start'; zinit light zsh-users/zsh-autosuggestions
 zinit ice lucid wait='5'; zinit light MichaelAquilina/zsh-you-should-use
-zinit light marlonrichert/zsh-autocomplete
+zinit ice blockf; zinit light marlonrichert/zsh-autocomplete
 zinit light Tarrasch/zsh-autoenv
 zinit light agkozak/zsh-z
 # zplug "hlissner/zsh-autopair" # maybe I never notice it whenever triggered
