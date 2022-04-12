@@ -94,10 +94,9 @@ zinit snippet OMZP::pipenv
 zinit snippet OMZP::poetry
 
 # zsh installable plugins
-zinit ice defer "2" # (defer:2 means syntax-highlighting gets loaded after completions)
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-autosuggestions
-zinit light MichaelAquilina/zsh-you-should-use
+zinit ice lucid wait='5'; zinit light zsh-users/zsh-syntax-highlighting
+zinit ice lucid wait='0' atload='_zsh_autosuggest_start'; zinit light zsh-users/zsh-autosuggestions
+zinit ice lucid wait='5'; zinit light MichaelAquilina/zsh-you-should-use
 zinit light marlonrichert/zsh-autocomplete
 zinit light Tarrasch/zsh-autoenv
 zinit light agkozak/zsh-z
