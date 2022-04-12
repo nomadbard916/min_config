@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 LANG='en_US.UTF-8'
 
 # use bash default value for history
@@ -12,22 +5,37 @@ HISTSIZE=1000
 SAVEHIST=2000
 HISTFILE=~/.zsh_history
 
-# TODO: sane zplug installation defaults
-# if [[ -z "$ZPLUG_HOME" ]]; then
-#   ZPLUG_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/zplug"
-# fi
-# if [[ -z "$ZPLUG_CACHE_DIR" ]]; then
-#   ZPLUG_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zplug"
-# fi
+# + Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-# # Ensure zplug is installed
-# if [[ ! -d "$ZPLUG_HOME" ]]; then
-#   git clone https://github.com/zplug/zplug "$ZPLUG_HOME"
-#   source "$ZPLUG_HOME/init.zsh" && zplug --self-manage update
-# else
-#   source "$ZPLUG_HOME/init.zsh"
-# fi
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
 
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+
+### End of Zinit's installer chunk
+
+# + option settings
 # see zshoptions(1) for details on what these do
 # see also zshexpn(1) for details on how globbing works
 setopt append_history # better concurrent shell history sharing
@@ -54,66 +62,50 @@ setopt prompt_cr prompt_sp # don't clobber output without trailing newlines
 setopt MENU_COMPLETE
 setopt no_list_ambiguous
 
-
-
-# zplug plugin list
-# zplug itself
-zplug "zplug/zplug", hook-build: "zplug --self-manage"
-# theme, maybe use powerlevel10k later
-# zplug "themes/ys", from:oh-my-zsh, as:theme
-zplug romkatv/powerlevel10k, as:theme, depth:1
+# + zinit plugin list
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # oh-my-zsh plugins
 # plugins with installable packages
-zplug "plugins/ag", from:oh-my-zsh
-zplug "plugins/fzf", from:oh-my-zsh
-zplug "plugins/z", from:oh-my-zsh
+zinit ice as"completion"; zinit snippet OMZP::ag/_ag
+zinit snippet OMZP::fzf
+
 # commands
-zplug "plugins/command-not-found", from:oh-my-zsh
-zplug "plugins/common-aliases", from:oh-my-zsh
-zplug "plugins/safe-paste", from:oh-my-zsh
-zplug "plugins/extract", from:oh-my-zsh
-zplug "plugins/copypath", from:oh-my-zsh
+zinit snippet OMZP::command-not-found
+zinit snippet OMZP::common-aliases
+zinit snippet OMZP::safe-paste
+zinit snippet OMZP::extract
+zinit snippet OMZP::copypath
 # terminal
-zplug "plugins/colorize", from:oh-my-zsh
-zplug "plugins/copybuffer", from:oh-my-zsh
+zinit snippet OMZP::colorize
+zinit snippet OMZP::copybuffer
 # systematic
-zplug "plugins/git", from:oh-my-zsh
-# zplug "plugins/svn", from:oh-my-zsh # dummy plugin to supress error msg only 
-# environments
-zplug "plugins/docker", from:oh-my-zsh
-zplug "plugins/docker-compose", from:oh-my-zsh
-zplug "plugins/aws", from:oh-my-zsh
+zinit snippet OMZP::git
+zinit ice as"completion"; zinit snippet OMZP::docker/_docker
+zinit snippet OMZP::docker-compose
+zinit snippet OMZP::aws
 # php
-zplug "plugins/composer", from:oh-my-zsh
-zplug "plugins/laravel", from:oh-my-zsh
+zinit snippet OMZP::composer
+zinit snippet OMZP::laravel
 # Python
-zplug "plugins/python", from:oh-my-zsh
-zplug "plugins/pip", from:oh-my-zsh
-zplug "plugins/pipenv", from:oh-my-zsh
-zplug "plugins/poetry", from:oh-my-zsh
+zinit snippet OMZP::python
+zinit snippet OMZP::pip
+zinit snippet OMZP::pipenv
+zinit snippet OMZP::poetry
 
 # zsh installable plugins
-zplug "zsh-users/zsh-syntax-highlighting", defer:2  # (defer:2 means syntax-highlighting gets loaded after completions)
-zplug "zsh-users/zsh-autosuggestions"
-zplug "MichaelAquilina/zsh-you-should-use"
-zplug "marlonrichert/zsh-autocomplete"
-zplug "Tarrasch/zsh-autoenv"
+zinit ice defer "2" # (defer:2 means syntax-highlighting gets loaded after completions)
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
+zinit light MichaelAquilina/zsh-you-should-use
+zinit light marlonrichert/zsh-autocomplete
+zinit light Tarrasch/zsh-autoenv
+zinit light agkozak/zsh-z
 # zplug "hlissner/zsh-autopair" # maybe I never notice it whenever triggered
 
-# TODO: Install packages that have not been installed yet
-# if ! zplug check --verbose; then
-#     printf "Install? [y/N]: "
-#     if read -q; then
-#         echo; zplug install
-#     else
-#         echo
-#     fi
-# fi
 
-# zplug load
 
-# TODO: zplug auto update plugin
+# TODO: auto update plugins
 # _zplug-check-interval() {
 #   now=$(date +%s)
 #   if [ -f "${1}" ]; then
@@ -163,11 +155,8 @@ zplug "Tarrasch/zsh-autoenv"
 # diaable it for ubuntu
 skip_global_compinit=1
 
-# use ag for FZF and ignore some files 
+# use ag for FZF and ignore some files
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
-
-
-# source $ZSH/oh-my-zsh.sh
 
 
 # User configuration
@@ -183,15 +172,7 @@ export EDITOR='vim'
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
+# + set ailase
 alias ptt="ssh bbsu@ptt.cc"
 
 # separate aliases
@@ -204,11 +185,7 @@ if [ -f ~/.zsh_paths ]; then
     source ~/.zsh_paths
 fi
 
-# use the real fd when common-aliases has assigned alias for find
-# unalias fd
-
-
-# shortcut to vimrc 
+# shortcut to vimrc
 alias vimrc="vim ~/.vimrc"
 # alias zshrc="vim ~/.zshrc" # this command is already in common aliases
 
@@ -219,10 +196,6 @@ alias zshrc_publish="/bin/cp -f ~/.zshrc ~/.zshrc.bak; cp ~/.zshrc ~/Dropbox/.zs
 # shortcut to apply vimrc and zshrc changes from Dropbox after backup
 alias vimrc_apply="cp ~/.vimrc ~/.vimrc.bak; cp ~/Dropbox/.vimrc ~/.vimrc"
 alias zshrc_apply="cp ~/.zshrc ~/.zshrc.bak; cp ~/Dropbox/.zshrc ~/.zshrc"
-
-# let's play with SpaceVim, don't  let it override ~/.vimrc
-alias svim_install='git clone https://github.com/SpaceVim/SpaceVim.git ~/.SpaceVim' 
-alias svim='vim -u ~/.SpaceVim/vimrc'
 
 # eval $(thefuck --alias)
 
