@@ -63,7 +63,7 @@ setopt MENU_COMPLETE
 setopt no_list_ambiguous
 
 # + zinit plugin list
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit ice depth"1"; zinit light romkatv/powerlevel10k
 
 # oh-my-zsh plugins
 # plugins with installable packages
