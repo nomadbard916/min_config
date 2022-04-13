@@ -81,17 +81,22 @@ zinit snippet OMZP::common-aliases
 zinit snippet OMZP::safe-paste
 zinit snippet OMZP::extract
 zinit snippet OMZP::copypath
+
 # terminal
 zinit snippet OMZP::colorize
 zinit snippet OMZP::copybuffer
+zinit snippet OMZ::lib/theme-and-appearance.zsh
+
 # systematic
 zinit snippet OMZP::git
 zinit ice as"completion"; zinit snippet OMZP::docker/_docker
 zinit snippet OMZP::docker-compose
 zinit snippet OMZP::aws
+
 # php
 zinit snippet OMZP::composer
 zinit snippet OMZP::laravel
+
 # Python
 zinit snippet OMZP::python
 zinit snippet OMZP::pip
@@ -99,15 +104,19 @@ zinit snippet OMZP::pipenv
 zinit snippet OMZP::poetry
 
 # zsh installable plugins
-zinit ice lucid wait='5'; zinit light zsh-users/zsh-syntax-highlighting
+# zinit ice lucid wait='5'; zinit light zsh-users/zsh-syntax-highlighting
 zinit ice lucid wait='0' atload='_zsh_autosuggest_start'; zinit light zsh-users/zsh-autosuggestions
 zinit ice lucid wait='5'; zinit light MichaelAquilina/zsh-you-should-use
 zinit ice blockf; zinit light marlonrichert/zsh-autocomplete
 zinit light Tarrasch/zsh-autoenv
+zinit wait lucid for \
+ atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    zdharma-continuum/fast-syntax-highlighting
 
 
 
 # TODO: auto update self and plugins
+# ! careful: zinit clean may accidentally remove plugs still in wait
 # _zplug-check-interval() {
 #   now=$(date +%s)
 #   if [ -f "${1}" ]; then
