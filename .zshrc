@@ -192,14 +192,20 @@ fi
 alias vimrc="vim ~/.vimrc"
 # alias zshrc="vim ~/.zshrc" # this command is already in common aliases
 
-# shortcut to backup vimrc and zshrc, then  update to dropbox
-alias vimrc_publish="/bin/cp -f ~/.vimrc ~/.vimrc.bak; cp ~/.vimrc ~/Dropbox/.vimrc"
-alias zshrc_publish="/bin/cp -f ~/.zshrc ~/.zshrc.bak; cp ~/.zshrc ~/Dropbox/.zshrc"
+# Shortcut to backup vimrc and zshrc, then  update to MIN_CONFIG_PATH
+# You need to export MIN_CONFIG_PATH first. I personally put it in ~/.zsh_paths
+# alias vimrc_publish="/bin/cp -f ~/.vimrc ~/.vimrc.bak; cp ~/.vimrc ~/Dropbox/.vimrc"
+# alias zshrc_publish="/bin/cp -f ~/.zshrc ~/.zshrc.bak; cp ~/.zshrc ~/Dropbox/.zshrc"
+# TODO: function to ask for git commit and push
+alias vimrc_publish="/bin/cp -f ~/.vimrc ~/.vimrc.bak; cp ~/.vimrc $MIN_CONFIG_PATH/.vimrc"
+alias zshrc_publish="/bin/cp -f ~/.zshrc ~/.zshrc.bak; cp ~/.zshrc $MIN_CONFIG_PATH/.zshrc"
 
 # shortcut to apply vimrc and zshrc changes from Dropbox after backup
-alias vimrc_apply="cp ~/.vimrc ~/.vimrc.bak; cp ~/Dropbox/.vimrc ~/.vimrc"
-alias zshrc_apply="cp ~/.zshrc ~/.zshrc.bak; cp ~/Dropbox/.zshrc ~/.zshrc"
+# alias vimrc_apply="cp ~/.vimrc ~/.vimrc.bak; cp ~/Dropbox/.vimrc ~/.vimrc"
+alias zshrc_apply="cp ~/.zshrc ~/.zshrc.bak; cp $MIN_CONFIG_PATH/.zshrc ~/.zshrc"
+alias vimrc_apply="cp ~/.vimrc ~/.vimrc.bak; cp $MIN_CONFIG_PATH/.vimrc ~/.vimrc"
 
+# it's too slow, don't use.
 # eval $(thefuck --alias)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
