@@ -5,6 +5,11 @@ HISTSIZE=1000
 SAVEHIST=2000
 HISTFILE=~/.zsh_history
 
+# remove any calls to compinit as zsh-autocomplete suggests
+# autoload -Uz compinit && compinit # built-in one
+# diaable it for ubuntu
+skip_global_compinit=1
+
 # + Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -65,12 +70,12 @@ setopt no_list_ambiguous
 # + zinit plugin list
 zinit ice depth"1"; zinit light romkatv/powerlevel10k
 
-# oh-my-zsh plugins
 # plugins with installable packages
 zinit ice as"completion"; zinit snippet OMZP::ag/_ag
-zinit snippet OMZP::fzf
+zinit ice lucid wait='3'; zinit snippet OMZP::fzf
 
 # commands
+zinit light agkozak/zsh-z
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::common-aliases
 zinit snippet OMZP::safe-paste
@@ -99,12 +104,10 @@ zinit ice lucid wait='0' atload='_zsh_autosuggest_start'; zinit light zsh-users/
 zinit ice lucid wait='5'; zinit light MichaelAquilina/zsh-you-should-use
 zinit ice blockf; zinit light marlonrichert/zsh-autocomplete
 zinit light Tarrasch/zsh-autoenv
-zinit light agkozak/zsh-z
-# zplug "hlissner/zsh-autopair" # maybe I never notice it whenever triggered
 
 
 
-# TODO: auto update plugins
+# TODO: auto update self and plugins
 # _zplug-check-interval() {
 #   now=$(date +%s)
 #   if [ -f "${1}" ]; then
@@ -147,16 +150,8 @@ zinit light agkozak/zsh-z
 #   command rm -f $lockfile
 # fi
 
-
-
-# remove any calls to compinit as zsh-autocomplete suggests
-# autoload -Uz compinit && compinit # built-in one
-# diaable it for ubuntu
-skip_global_compinit=1
-
 # use ag for FZF and ignore some files
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
-
 
 # User configuration
 # Preferred editor for local and remote sessions
@@ -171,7 +166,7 @@ export EDITOR='vim'
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# + set ailase
+# + set ailases
 alias ptt="ssh bbsu@ptt.cc"
 
 # separate aliases
