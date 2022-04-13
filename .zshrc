@@ -73,6 +73,7 @@ zinit ice depth"1"; zinit light romkatv/powerlevel10k
 # plugins with installable packages
 zinit ice as"completion"; zinit snippet OMZP::ag/_ag
 zinit ice lucid wait='3'; zinit snippet OMZP::fzf
+zinit snippet OMZP::colorize
 
 # commands
 zinit light agkozak/zsh-z
@@ -83,7 +84,6 @@ zinit snippet OMZP::extract
 zinit snippet OMZP::copypath
 
 # terminal
-zinit snippet OMZP::colorize
 zinit snippet OMZP::copybuffer
 zinit snippet OMZ::lib/theme-and-appearance.zsh
 
