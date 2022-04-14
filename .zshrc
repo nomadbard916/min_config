@@ -202,9 +202,9 @@ alias vimrc="vim ~/.vimrc"
 alias vimrc_publish="/bin/cp -f ~/.vimrc ~/.vimrc.bak && cp ~/.vimrc $MIN_CONFIG_PATH/.vimrc && cd $MIN_CONFIG_PATH "
 alias zshrc_publish="/bin/cp -f ~/.zshrc ~/.zshrc.bak && cp ~/.zshrc $MIN_CONFIG_PATH/.zshrc && cd $MIN_CONFIG_PATH "
 
-# shortcut to apply vimrc and zshrc changes from Dropbox after backup
-alias zshrc_apply="cp ~/.zshrc ~/.zshrc.bak && cp $MIN_CONFIG_PATH/.zshrc ~/.zshrc"
-alias vimrc_apply="cp ~/.vimrc ~/.vimrc.bak && cp $MIN_CONFIG_PATH/.vimrc ~/.vimrc"
+# shortcut to apply vimrc and zshrc changes from git repository after backup
+alias zshrc_apply="cd $MIN_CONFIG_PATH && git pull && cp ~/.zshrc ~/.zshrc.bak && cp $MIN_CONFIG_PATH/.zshrc ~/.zshrc && cd -"
+alias vimrc_apply="cd $MIN_CONFIG_PATH && git pull && cp ~/.vimrc ~/.vimrc.bak && cp $MIN_CONFIG_PATH/.vimrc ~/.vimrc && cd -"
 
 # it's too slow, don't use.
 # eval $(thefuck --alias)
