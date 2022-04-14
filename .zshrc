@@ -110,7 +110,8 @@ zinit snippet OMZP::poetry
 # zinit ice lucid wait='5'; zinit light zsh-users/zsh-syntax-highlighting
 zinit ice lucid wait='0' atload='_zsh_autosuggest_start'; zinit light zsh-users/zsh-autosuggestions
 zinit ice lucid wait='5'; zinit light MichaelAquilina/zsh-you-should-use
-zinit ice blockf; zinit light marlonrichert/zsh-autocomplete
+# zinit ice blockf; zinit light marlonrichert/zsh-autocomplete
+zinit light marlonrichert/zsh-autocomplete
 zinit light Tarrasch/zsh-autoenv
 zinit wait lucid for \
  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
