@@ -13,6 +13,9 @@ skip_global_compinit=1
 # force use emacs keymap
 bindkey -e
 
+# set ZINIT_HOME for easier manipulation, like ZPLUG_HOME does
+export ZINIT_HOME=$HOME/.local/share/zinit
+
 # + Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -120,48 +123,47 @@ zinit wait lucid for \
     zdharma-continuum/fast-syntax-highlighting
 
 # TODO: auto update self and plugins
-# ! careful: zinit clean may accidentally remove plugs still in wait
-# _zplug-check-interval() {
-#   now=$(date +%s)
-#   if [ -f "${1}" ]; then
-#     last_update=$(cat "${1}")
-#   else
-#     last_update=0
-#   fi
-#   interval=$(expr ${now} - ${last_update})
-#   echo "${interval}"
-# }
+_zinit-check-interval() {
+  now=$(date +%s)
+  if [ -f "${1}" ]; then
+    last_update=$(cat "${1}")
+  else
+    last_update=0
+  fi
+  interval=$(expr ${now} - ${last_update})
+  echo "${interval}"
+}
 
-# _zplug-check-for-updates() {
-#   if [ -z "${ZPLUG_PLUGIN_UPDATE_DAYS}" ]; then
-#     ZPLUG_PLUGIN_UPDATE_DAYS=14
-#   fi
+_zinit-check-for-updates() {
+  if [ -z "${ZINIT_PLUGIN_UPDATE_DAYS}" ]; then
+    ZINIT_PLUGIN_UPDATE_DAYS=14
+  fi
 
-#   if [ -z "${ZPLUG_PLUGIN_UPDATE_FILE}" ]; then
-#     ZPLUG_PLUGIN_UPDATE_FILE="${ZPLUG_HOME:-}/.zplug_plugin_lastupdate"
-#   fi
+  if [ -z "${ZINIT_PLUGIN_UPDATE_FILE}" ]; then
+    ZINIT_PLUGIN_UPDATE_FILE="${ZINIT_HOME:-}/.zinit_plugin_lastupdate"
+  fi
 
-#   local day_seconds=$(expr 24 \* 60 \* 60)
-#   local plugins_seconds=$(expr ${day_seconds} \* ${ZPLUG_PLUGIN_UPDATE_DAYS})
+  local day_seconds=$(expr 24 \* 60 \* 60)
+  local plugins_seconds=$(expr ${day_seconds} \* ${ZINIT_PLUGIN_UPDATE_DAYS})
 
-#   local last_plugin=$(_zplug-check-interval ${ZPLUG_PLUGIN_UPDATE_FILE})
+  local last_plugin=$(_zinit-check-interval ${ZINIT_PLUGIN_UPDATE_FILE})
 
-#   if [ ${last_plugin} -gt ${plugins_seconds} ]; then
-#     echo "It has been $(expr ${last_plugin} / $day_seconds) days since your zplug plugins were updated"
-#     zplug update
+  if [ ${last_plugin} -gt ${plugins_seconds} ]; then
+    echo "It has been $(expr ${last_plugin} / $day_seconds) days since your zinit plugins were updated"
+    zinit self-update
+    zinit update --all
 
-#     date +%s >! ${ZPLUG_PLUGIN_UPDATE_FILE}
-#     zplug clean --force
-#   fi
-# }
+    date +%s >! ${ZINIT_PLUGIN_UPDATE_FILE}
+  fi
+}
 
-# zmodload zsh/system
-# lockfile=${ZPLUG_HOME:-~}/.zplug_autoupdate_lock
-# touch $lockfile
-# if ! which zsystem &> /dev/null || zsystem flock -t 1 $lockfile; then
-#   _zplug-check-for-updates
-#   command rm -f $lockfile
-# fi
+zmodload zsh/system
+lockfile=${ZINIT_HOME:-~}/.zinit_autoupdate_lock
+touch $lockfile
+if ! which zsystem &> /dev/null || zsystem flock -t 1 $lockfile; then
+  _zinit-check-for-updates
+  command rm -f $lockfile
+fi
 
 # use ag for FZF and ignore some files
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
