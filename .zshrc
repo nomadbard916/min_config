@@ -195,7 +195,7 @@ if [ -f ~/.zsh_paths ]; then
 fi
 
 # You need to export MIN_CONFIG_PATH first to use this alias. I personally put it in ~/.zsh_paths
-alias mcp="cd $MIN_CONFIG_PATH"
+alias cdmc="cd $MIN_CONFIG_PATH"
 
 # shortcut to vimrc
 alias vimrc="vim ~/.vimrc"
