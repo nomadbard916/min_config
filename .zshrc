@@ -122,7 +122,8 @@ zinit wait lucid for \
  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     zdharma-continuum/fast-syntax-highlighting
 
-# TODO: auto update self and plugins
+# + auto update zinit and plugins
+# the snippets were borrowed from somewhere I forgot
 _zinit-check-interval() {
   now=$(date +%s)
   if [ -f "${1}" ]; then
@@ -151,7 +152,7 @@ _zinit-check-for-updates() {
   if [ ${last_plugin} -gt ${plugins_seconds} ]; then
     echo "It has been $(expr ${last_plugin} / $day_seconds) days since your zinit plugins were updated"
     zinit self-update
-    zinit update --all
+    zinit update --all --parallel 50
 
     date +%s >! ${ZINIT_PLUGIN_UPDATE_FILE}
   fi
@@ -168,14 +169,7 @@ fi
 # use ag for FZF and ignore some files
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
 
-# User configuration
 # Preferred editor for local and remote sessions
-# example:
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
 export EDITOR='vim'
 
 # Compilation flags
