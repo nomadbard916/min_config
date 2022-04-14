@@ -76,7 +76,8 @@ zinit ice depth"1"; zinit light romkatv/powerlevel10k
 # plugins with installable packages
 zinit ice as"completion"; zinit snippet OMZP::ag/_ag
 zinit ice lucid wait='3'; zinit snippet OMZP::fzf
-zinit snippet OMZP::colorize
+# needs Pygments (default) or Chroma
+zinit snippet OMZP::colorize  
 
 # commands
 zinit light agkozak/zsh-z
@@ -88,7 +89,7 @@ zinit snippet OMZP::copypath
 
 # terminal
 zinit snippet OMZP::copybuffer
-zinit snippet OMZ::lib/theme-and-appearance.zsh
+zinit snippet OMZL::theme-and-appearance.zsh
 
 # systematic
 zinit snippet OMZP::git
@@ -111,6 +112,7 @@ zinit snippet OMZP::poetry
 zinit ice lucid wait='0' atload='_zsh_autosuggest_start'; zinit light zsh-users/zsh-autosuggestions
 zinit ice lucid wait='5'; zinit light MichaelAquilina/zsh-you-should-use
 # zinit ice blockf; zinit light marlonrichert/zsh-autocomplete
+# give up on 'zinit ice blockf' as it destroys phpstorm's terminal
 zinit light marlonrichert/zsh-autocomplete
 zinit light Tarrasch/zsh-autoenv
 zinit wait lucid for \
@@ -190,7 +192,7 @@ if [ -f ~/.zsh_paths ]; then
     source ~/.zsh_paths
 fi
 
-# You need to export MIN_CONFIG_PATH first. I personally put it in ~/.zsh_paths
+# You need to export MIN_CONFIG_PATH first to use this alias. I personally put it in ~/.zsh_paths
 alias mcp="cd $MIN_CONFIG_PATH"
 
 # shortcut to vimrc
@@ -209,7 +211,7 @@ alias vimrc_apply="cd $MIN_CONFIG_PATH && git pull && cp ~/.vimrc ~/.vimrc.bak &
 # it's too slow, don't use.
 # eval $(thefuck --alias)
 
-# + p10k commands
+# + p10k internal use
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 (( ! ${+functions[p10k]} )) || p10k finalize
