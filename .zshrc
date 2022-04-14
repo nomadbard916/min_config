@@ -1,3 +1,4 @@
+# + global settings
 LANG='en_US.UTF-8'
 
 # use bash default value for history
@@ -46,7 +47,7 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
-# + option settings
+# + zsh options
 # see zshoptions(1) for details on what these do
 # see also zshexpn(1) for details on how globbing works
 setopt append_history # better concurrent shell history sharing
@@ -111,19 +112,20 @@ zinit snippet OMZP::pipenv
 zinit snippet OMZP::poetry
 
 # zsh installable plugins
-# zinit ice lucid wait='5'; zinit light zsh-users/zsh-syntax-highlighting
 zinit ice lucid wait='0' atload='_zsh_autosuggest_start'; zinit light zsh-users/zsh-autosuggestions
 zinit ice lucid wait='5'; zinit light MichaelAquilina/zsh-you-should-use
-# zinit ice blockf; zinit light marlonrichert/zsh-autocomplete
-# give up on 'zinit ice blockf' as it destroys phpstorm's terminal
+# give up on 'zinit ice blockf' for this plugin as it destroys intellij's terminal
 zinit light marlonrichert/zsh-autocomplete
 zinit light Tarrasch/zsh-autoenv
+# deprecated, this might not be powerful enough
+# zinit ice lucid wait='5'; zinit light zsh-users/zsh-syntax-highlighting
 zinit wait lucid for \
  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     zdharma-continuum/fast-syntax-highlighting
 
 # + auto update zinit and plugins
-# the snippets were borrowed from somewhere I forgot
+# the snippets were borrowed from somewhere I forgot, 
+# with zplug as the original implementation target
 _zinit-check-interval() {
   now=$(date +%s)
   if [ -f "${1}" ]; then
@@ -188,12 +190,12 @@ if [ -f ~/.zsh_paths ]; then
     source ~/.zsh_paths
 fi
 
-# You need to export MIN_CONFIG_PATH first to use this alias. I personally put it in ~/.zsh_paths
-alias cdmc="cd $MIN_CONFIG_PATH"
-
 # shortcut to vimrc
 alias vimrc="vim ~/.vimrc"
 # alias zshrc="vim ~/.zshrc" # this command is already in common aliases
+ 
+# You need to export MIN_CONFIG_PATH first to use below aliases. I personally put it in ~/.zsh_paths
+alias cdmc="cd $MIN_CONFIG_PATH"
 
 # Shortcut to backup vimrc and zshrc, then  update to MIN_CONFIG_PATH
 # TODO: function to ask for git commit message and push
