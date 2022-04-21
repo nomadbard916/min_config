@@ -1,10 +1,10 @@
 # + global settings
-LANG='en_US.UTF-8'
+export LANG='en_US.UTF-8'
 
 # use bash default value for history
-HISTSIZE=1000
-SAVEHIST=2000
-HISTFILE=~/.zsh_history
+export HISTSIZE=1000
+export SAVEHIST=2000
+export HISTFILE=~/.zsh_history
 
 # remove any calls to compinit as zsh-autocomplete suggests
 # autoload -Uz compinit && compinit # built-in one
@@ -63,6 +63,9 @@ setopt hist_ignore_space # ` command` doesn't save to history
 setopt hist_subst_pattern # better globs / parameter expansion
 setopt hist_reduce_blanks # `a  b` normalizes to `a b` in history
 setopt hist_verify # reduce oops I sudoed the wrong thing
+setopt hist_ignore_all_dups # If a new command line being added to the history list duplicates an older one, the older command is removed from the list (even if it is not the previous event).
+setopt inc_append_history        # Write to the history file immediately, not when the shell exits.
+setopt share_history             # Share history between all sessions.
 setopt interactive_comments # so pasting live to test works
 setopt ksh_glob # better globs
 setopt long_list_jobs # easier to read job stuff
