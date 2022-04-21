@@ -86,6 +86,7 @@ zinit ice lucid wait='3'; zinit snippet OMZP::fzf
 # commands
 zinit light agkozak/zsh-z
 zinit snippet OMZP::command-not-found
+zinit snippet OMZL::directories.zsh
 zinit snippet OMZP::common-aliases
 zinit snippet OMZP::safe-paste
 # copy functionalities with command 'clipcopy' provided by the first library
