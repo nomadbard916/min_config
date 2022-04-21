@@ -81,15 +81,15 @@ zinit ice depth"1"; zinit light romkatv/powerlevel10k
 zinit ice as"completion"; zinit snippet OMZP::ag/_ag
 zinit ice lucid wait='3'; zinit snippet OMZP::fzf
 # needs Pygments (default) or Chroma
-zinit snippet OMZP::colorize  
+# zinit ice lucid wait='3'; zinit snippet OMZP::colorize  
 
 # commands
 zinit light agkozak/zsh-z
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::common-aliases
 zinit snippet OMZP::safe-paste
-zinit snippet OMZP::extract
 zinit snippet OMZP::copypath
+# zinit snippet OMZP::extract
 
 # terminal
 zinit snippet OMZP::copybuffer
@@ -99,7 +99,7 @@ zinit snippet OMZL::theme-and-appearance.zsh
 zinit snippet OMZP::git
 zinit ice as"completion"; zinit snippet OMZP::docker/_docker
 zinit snippet OMZP::docker-compose
-zinit snippet OMZP::aws
+# zinit snippet OMZP::aws
 
 # php
 zinit snippet OMZP::composer
