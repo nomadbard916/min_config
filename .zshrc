@@ -209,7 +209,8 @@ alias vimrc_publish="/bin/cp -f ~/.vimrc ~/.vimrc.bak && cp ~/.vimrc $MIN_CONFIG
 alias zshrc_publish="/bin/cp -f ~/.zshrc ~/.zshrc.bak && cp ~/.zshrc $MIN_CONFIG_PATH/.zshrc && cd $MIN_CONFIG_PATH "
 
 # shortcut to apply vimrc and zshrc changes from git repository after backup
-alias zshrc_apply="cd $MIN_CONFIG_PATH && git pull && cp ~/.zshrc ~/.zshrc.bak && cp $MIN_CONFIG_PATH/.zshrc ~/.zshrc && cd -"
+ZSHRC_PATH='~/.zshrc'
+alias zshrc_apply="cd $MIN_CONFIG_PATH && git pull && cp $ZSHRC_PATH $ZSHRC_PATH.bak && cp $MIN_CONFIG_PATH/.zshrc $ZSHRC_PATH && cd - && source $ZSHRC_PATH"
 alias vimrc_apply="cd $MIN_CONFIG_PATH && git pull && cp ~/.vimrc ~/.vimrc.bak && cp $MIN_CONFIG_PATH/.vimrc ~/.vimrc && cd -"
 
 # it's too slow, don't use.
