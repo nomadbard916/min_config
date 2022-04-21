@@ -89,7 +89,7 @@ zinit snippet OMZP::command-not-found
 zinit snippet OMZP::common-aliases
 zinit snippet OMZP::safe-paste
 # copy functionalities with command 'clipcopy' provided by the first library
-zinit snippet https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/clipboard.zsh
+zinit snippet OMZL::clipboard.zsh
 zinit snippet OMZP::copybuffer
 zinit snippet OMZP::copypath
 # zinit snippet OMZP::extract
