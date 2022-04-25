@@ -62,7 +62,7 @@ setopt hist_ignore_space # ` command` doesn't save to history
 setopt hist_subst_pattern # better globs / parameter expansion
 setopt hist_reduce_blanks # `a  b` normalizes to `a b` in history
 setopt hist_verify # reduce oops I sudoed the wrong thing
-setopt hist_ignore_all_dups # If a new command line being added to the history list duplicates an older one, the older command is removed from the list (even if it is not the previous event).
+# setopt hist_ignore_all_dups # If a new command line being added to the history list duplicates an older one, the older command is removed from the list (even if it is not the previous event).
 setopt inc_append_history        # Write to the history file immediately, not when the shell exits.
 setopt share_history             # Share history between all sessions.
 setopt interactive_comments # so pasting live to test works
