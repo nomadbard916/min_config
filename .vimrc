@@ -318,15 +318,15 @@ nnoremap <leader>ss :Ag<Enter>
 nmap <Leader>sg <Plug>SearchNormal
 vmap <Leader>sg <Plug>SearchVisual
 
-" + use NERDTree as file tree manager
-" 'file tree toggle'
-nnoremap <leader>ft :NERDTreeToggle<Enter>
+" + use NERDTree as explorer
+" 'explorer toggle'
+nnoremap <leader>et :NERDTreeToggle<Enter>
 " toggle by looking up VCS root
-nnoremap <leader>fv :NERDTreeToggleVCS<Enter>
-" 'file tree focus'
-nnoremap <leader>ff :NERDTreeFocus<Enter>
-" 'file tree reveal'
-nnoremap <leader>fr :NERDTreeFind<Enter>
+nnoremap <leader>ev :NERDTreeToggleVCS<Enter>
+" 'explorer focus'
+nnoremap <leader>ef :NERDTreeFocus<Enter>
+" 'explorer reveal'
+nnoremap <leader>er :NERDTreeFind<Enter>
 " close vim when there's only NERDTree left
 autocmd bufenter + if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
