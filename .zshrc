@@ -212,6 +212,10 @@ ZSHRC_PATH='~/.zshrc'
 alias zshrc_apply="cd $MIN_CONFIG_PATH && git pull && cp $ZSHRC_PATH $ZSHRC_PATH.bak && cp $MIN_CONFIG_PATH/.zshrc $ZSHRC_PATH && cd - && source $ZSHRC_PATH"
 alias vimrc_apply="cd $MIN_CONFIG_PATH && git pull && cp ~/.vimrc ~/.vimrc.bak && cp $MIN_CONFIG_PATH/.vimrc ~/.vimrc && cd -"
 
+# useful cli-gui tools
+alias lzd=lazydocker
+alias lzg=lazygit
+
 # it's too slow, don't use.
 # eval $(thefuck --alias)
 
