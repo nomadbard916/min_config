@@ -28,20 +28,9 @@ autocmd BufReadPost *
     \   exe "normal! g`\"" |
     \ endif
 
-" + split window and navigation shortcuts
-set splitright
 
-nnoremap <Leader>wv :vsplit<CR>
-nnoremap <Leader>wh :split<CR>
-nnoremap <Leader>wm <C-W>\| <C-W>_
-nnoremap <Leader>w= <C-W>=
 
-nnoremap <Leader>wo <C-W>o
 
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 
 " + tab shortcuts
 set tabpagemax=100
@@ -151,6 +140,8 @@ vnoremap <C-S-j> :m '>+1<CR>gv=gv
 " behavior 
 " ---
 set mouse=a
+
+set splitright
 
 set wildmenu
 set lazyredraw
