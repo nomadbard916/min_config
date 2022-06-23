@@ -275,7 +275,9 @@ imap <c-space> <Plug>(asyncomplete_force_refresh)
 
 
 " gh and gd
-nnoremap gh :LspHover<Enter>
+" no, gh if for vscodevim only. 
+" we need to figure out another key binding but not yet found
+" nnoremap gh :LspHover<Enter>
 nnoremap gd :LspDefinition<Enter>
  
 " + custom themes must be put here after plugins are called
