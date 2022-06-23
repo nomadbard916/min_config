@@ -202,15 +202,15 @@ alias vimrc="vim ~/.vimrc"
 # You need to export MIN_CONFIG_PATH first to use below aliases. I personally put it in ~/.zsh_paths
 alias cdmc="cd $MIN_CONFIG_PATH"
 
-# Shortcut to backup vimrc and zshrc, then  update to MIN_CONFIG_PATH
+# Shortcut to publish vimrc and zshrc config by backup first, then  update to MIN_CONFIG_PATH
 # TODO: function to ask for git commit message and push
-alias vimrc_publish="/bin/cp -f ~/.vimrc ~/.vimrc.bak && cp ~/.vimrc $MIN_CONFIG_PATH/.vimrc && cd $MIN_CONFIG_PATH "
-alias zshrc_publish="/bin/cp -f ~/.zshrc ~/.zshrc.bak && cp ~/.zshrc $MIN_CONFIG_PATH/.zshrc && cd $MIN_CONFIG_PATH "
+alias vcp="/bin/cp -f ~/.vimrc ~/.vimrc.bak && cp ~/.vimrc $MIN_CONFIG_PATH/.vimrc && cd $MIN_CONFIG_PATH "
+alias zcp="/bin/cp -f ~/.zshrc ~/.zshrc.bak && cp ~/.zshrc $MIN_CONFIG_PATH/.zshrc && cd $MIN_CONFIG_PATH "
 
-# shortcut to apply vimrc and zshrc changes from git repository after backup
+# shortcut to apply vimrc and zshrc config changes  from git repository after backup
 ZSHRC_PATH='~/.zshrc'
-alias zshrc_apply="cd $MIN_CONFIG_PATH && git pull && cp $ZSHRC_PATH $ZSHRC_PATH.bak && cp $MIN_CONFIG_PATH/.zshrc $ZSHRC_PATH && cd - && source $ZSHRC_PATH"
-alias vimrc_apply="cd $MIN_CONFIG_PATH && git pull && cp ~/.vimrc ~/.vimrc.bak && cp $MIN_CONFIG_PATH/.vimrc ~/.vimrc && cd -"
+alias zca="cd $MIN_CONFIG_PATH && git pull && cp $ZSHRC_PATH $ZSHRC_PATH.bak && cp $MIN_CONFIG_PATH/.zshrc $ZSHRC_PATH && cd - && source $ZSHRC_PATH"
+alias vca="cd $MIN_CONFIG_PATH && git pull && cp ~/.vimrc ~/.vimrc.bak && cp $MIN_CONFIG_PATH/.vimrc ~/.vimrc && cd -"
 
 # useful cli-gui tools
 alias lzd=lazydocker
