@@ -295,17 +295,7 @@
                 },
                 {
                     "from": {
-                        "key_code": "right_command"
-                    },
-                    "to": [
-                        {
-                            "key_code": "caps_lock"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "right_option"
+                        "key_code": "right_shift"
                     },
                     "to": [
                         {
