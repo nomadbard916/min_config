@@ -299,13 +299,13 @@
                     },
                     "to": [
                         {
-                            "key_code": "escape"
+                            "key_code": "left_control"
                         }
                     ]
                 },
                 {
                     "from": {
-                        "key_code": "escape"
+                        "key_code": "right_shift"
                     },
                     "to": [
                         {
