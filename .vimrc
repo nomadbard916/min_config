@@ -24,10 +24,6 @@ autocmd BufReadPost *
     \   exe "normal! g`\"" |
     \ endif
 
-
-
-
-
 " + tab shortcuts
 set tabpagemax=100
 
@@ -116,20 +112,15 @@ noremap k gk
 
 " + move lines up and down
 " don't map <A> or <M>. it doesn't work.
-nnoremap <C-S-Up> :m .-2<CR>==
-nnoremap <C-S-k> :m .-2<CR>==
-inoremap <C-S-Up> <ESC>:m .-2<CR>==gi
-inoremap <C-S-k> <ESC>:m .-2<CR>==gi
-vnoremap <C-S-Up> :m '<-2<CR>gv=gv
-vnoremap <C-S-k> :m '<-2<CR>gv=gv
+map <C-A-Up> :m .-2<CR>==
+map <C-M-Up> :m .-2<CR>==
+map <C-A-k> :m .-2<CR>==
+map <C-M-k> :m .-2<CR>==
 
-nnoremap <C-S-Down> :m .+1<CR>==
-nnoremap <C-S-j> :m .+1<CR>==
-inoremap <C-S-Down> <ESC>:m .+1<CR>==gi
-inoremap <C-S-j> <ESC>:m .+1<CR>==gi
-vnoremap <C-S-Down> :m '>+1<CR>gv=gv
-vnoremap <C-S-j> :m '>+1<CR>gv=gv
-
+map <C-A-Up> :m .+2<CR>==
+map <C-M-Up> :m .+2<CR>==
+map <C-A-k> :m .+2<CR>==
+map <C-M-k> :m .+2<CR>==
 
 
 " --- 
