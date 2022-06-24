@@ -112,16 +112,12 @@ noremap k gk
 
 " + move lines up and down
 " don't map <A> or <M>. it doesn't work.
-map <C-A-Up> :m .-2<CR>==
-map <C-M-Up> :m .-2<CR>==
-map <C-A-k> :m .-2<CR>==
-map <C-M-k> :m .-2<CR>==
-
-map <C-A-Up> :m .+2<CR>==
-map <C-M-Up> :m .+2<CR>==
-map <C-A-k> :m .+2<CR>==
-map <C-M-k> :m .+2<CR>==
-
+nnoremap <C-S-j> :m .+1<CR>==
+nnoremap <C-S-k> :m .-2<CR>==
+inoremap <C-S-j> <Esc>:m .+1<CR>==gi
+inoremap <C-S-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-S-j> :m '>+1<CR>gv=gv
+vnoremap <C-S-k> :m '<-2<CR>gv=gv
 
 " --- 
 " behavior 
