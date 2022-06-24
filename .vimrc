@@ -14,6 +14,8 @@ endif
 " ---
 " global 
 " ---
+" apply vimrc settings immediately
+nnoremap zso :source ~/.vimrc<CR>
 " change current working directory to current file
 nnoremap <leader>cd :cd %:p:h<CR>
 
