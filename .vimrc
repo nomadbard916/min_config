@@ -18,6 +18,7 @@ endif
 nnoremap zso :source ~/.vimrc<CR>
 " change current working directory to current file
 nnoremap <leader>cd :cd %:p:h<CR>
+imap jj <Esc>
 
 " + return to last edit position when opening files
 " https://vimhelp.org/usr_05.txt.html#last-position-jump
