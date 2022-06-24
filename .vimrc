@@ -222,12 +222,15 @@ Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python'}
 
 
 " + plugins to try
-" Plug 'neoclide/coc.nvim', {'branch': 'release'} ......it requires node.js
 " Plug 'garbas/vim-snipmate'
-" Plug 'scrooloose/syntastic'
-"Plug 'SirVer/ultisnips' ...... it may be very slow for nvim
+" trailing-white-space
+" vim-test
+" auto venv
 
 " + aborted plugins
+"Plug 'SirVer/ultisnips' ...... it may be very slow for nvim
+" Plug 'scrooloose/syntastic'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'} ......it requires node.js
 " Plug 'maralla/completor.vim' " use language-specific completion tools instead
 " Plug 'ctrlpvim/ctrlp.vim' ......it's very slow and fzf can do the same
 " Plug 'Yggdroot/indentLine' " this is too ugly
