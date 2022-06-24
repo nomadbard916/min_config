@@ -14,10 +14,6 @@ endif
 " ---
 " global 
 " ---
-" + use spacebar as leader as it's reachable by both hands,
-" and doesn't compromise ',' and ';' for repeating actions. 
-let mapleader = " "
-
 " change current working directory to current file
 nnoremap <leader>cd :cd %:p:h<CR>
 
