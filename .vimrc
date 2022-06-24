@@ -347,8 +347,8 @@ let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 set statusline+=%{gutentags#statusline()}
 
 " + setup which key hint popup
-nnoremap <silent> <leader> :WhichKey ' '<CR>
-vnoremap <silent> <leader> :WhichKeyVisual ' '<CR>
+nnoremap <silent> <leader> :WhichKey '\'<CR>
+vnoremap <silent> <leader> :WhichKeyVisual '\'<CR>
 
 " don't map 'c', 'g', 'z'... etc. as they need too much hacking around for built-in commands
 " you still need a binding to quickly ask for key mapping
