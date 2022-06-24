@@ -1,10 +1,8 @@
-" ---
-" Vim-plug  with auto install 
-" ---
 set nocompatible  " no compatible with vi-mode
 filetype off
 filetype plugin indent on
 
+" Vim-plug  with auto install 
 " after vim-plug is downloaded, you need to manually call :PlugInstall
 if empty(glob('~/.vim/autoload/plug.vim'))
     echo "Installing vim-plug..."
@@ -12,13 +10,10 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 " ---
-" global 
+" global behavior
 " ---
 " apply vimrc settings immediately
 nnoremap zso :source ~/.vimrc<CR>
-" change current working directory to current file
-nnoremap <leader>cd :cd %:p:h<CR>
-imap jj <Esc>
 
 " + return to last edit position when opening files
 " https://vimhelp.org/usr_05.txt.html#last-position-jump
@@ -27,26 +22,6 @@ autocmd BufReadPost *
     \   exe "normal! g`\"" |
     \ endif
 
-" + tab shortcuts
-set tabpagemax=100
-
-nnoremap te :tabedit <C-R>=expand('%:p:h')<CR>/
-nnoremap tn :tabnew<Enter>
-nnoremap tc :tabclose<Enter>
-nnoremap to :tabonly
-
-" ,t1 ,t2 ,t3: go specific tab
-for i in range(1, 9)
-    exec 'nnoremap t'.i.' '.i.'gt'
-endfor
-
-" + open terminal
-nnoremap <leader>` :terminal<Enter>
-" shortcut to close terminal which had its own namespace for commands
-" it may cause starnge arrow key behavior with single escape, ref.:
-" https://vi.stackexchange.com/questions/31645/weird-arrow-key-behaviour-in-fzf-vim-terminal-mode/33177
-" :tnoremap <Esc><Esc> <C-\><C-n>:q!<CR>
-" don't use this, it breaks fzf.vim's popup. just use <c-d> or exit
 
 " + enable copy to system clipboard
 set clipboard=unnamed
@@ -99,19 +74,11 @@ highlight ColorColumn ctermbg=lightgrey
 runtime macros/matchit.vim
 
 " --- 
-" editing 
+" built-in shortcut keys
 " ---
-set autoindent
-set shiftwidth=4
-set tabstop=4
-set expandtab
-set smarttab
-
-" refine the arrow keys
-noremap <down> g<down>
-noremap <up> g<up>
-noremap j gj
-noremap k gk
+" change current working directory to current file
+nnoremap <leader>cd :cd %:p:h<CR>
+imap jj <Esc>
 
 " + move lines up and down
 " don't map <A> or <M>. it doesn't work.
@@ -122,9 +89,35 @@ inoremap <C-S-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-S-j> :m '>+1<CR>gv=gv
 vnoremap <C-S-k> :m '<-2<CR>gv=gv
 
+" + tab shortcuts
+set tabpagemax=100
+
+nnoremap te :tabedit <C-R>=expand('%:p:h')<CR>/
+nnoremap tn :tabnew<Enter>
+nnoremap tc :tabclose<Enter>
+nnoremap to :tabonly
+
+" ,t1 ,t2 ,t3: go specific tab
+for i in range(1, 9)
+    exec 'nnoremap t'.i.' '.i.'gt'
+endfor
+
+" + open terminal
+nnoremap <leader>` :terminal<Enter>
+" shortcut to close terminal which had its own namespace for commands
+" it may cause starnge arrow key behavior with single escape, ref.:
+" https://vi.stackexchange.com/questions/31645/weird-arrow-key-behaviour-in-fzf-vim-terminal-mode/33177
+" :tnoremap <Esc><Esc> <C-\><C-n>:q!<CR>
+" don't use this, it breaks fzf.vim's popup. just use <c-d> or exit
+ 
 " --- 
 " behavior 
 " ---
+set autoindent
+set shiftwidth=4
+set tabstop=4
+set expandtab
+set smarttab
 set mouse=a
 
 set splitright
