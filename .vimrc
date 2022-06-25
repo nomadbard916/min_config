@@ -39,8 +39,7 @@ endif
 " ---
 syntax on
 
-" use hybrid relative number
-set number relativenumber
+set rnu
 set ruler
 set textwidth=80
 set wrap
@@ -66,7 +65,6 @@ set foldmethod=indent " default to python
 set foldlevel=0
 set foldnestmax=3
 set nofoldenable
-noremap <Leader>tf :set foldenable!<CR>:set foldenable?<CR>
 
 highlight ColorColumn ctermbg=lightgrey
 
@@ -80,6 +78,8 @@ runtime macros/matchit.vim
 nnoremap <leader>cd :cd %:p:h<CR>
 imap jj <Esc>
 nnoremap <leader>r :registers<CR>
+noremap <Leader>tf :set foldenable!<CR>:set foldenable?<CR>
+noremap <leader>tl :set rnu!<CR>
 
 " + move lines up and down
 " don't map <A> or <M>. it doesn't work.
