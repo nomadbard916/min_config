@@ -143,7 +143,6 @@ set incsearch
 set ignorecase
 " be case-sensitive when contains upper char
 set smartcase
-set hlsearch
 set nowrapscan
 " make no delay after esc
 set ttimeoutlen=0
