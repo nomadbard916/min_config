@@ -158,6 +158,7 @@ call plug#begin('~/.vim/plugged')
 
 " Plug 'dense-analysis/ale'
 " + lsp plugins 
+Plug 'google/vim-searchindex'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
