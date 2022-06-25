@@ -218,6 +218,7 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 " let vim able to open file by line, e.g. vim ~/.vimrc:20
 Plug 'bogado/file-line'
 Plug 'liuchengxu/vista.vim'
+Plug 'junegunn/vim-peekaboo'
 
 
 " + PHP-specific plugins
