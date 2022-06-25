@@ -79,9 +79,19 @@ nnoremap <leader>cd :cd %:p:h<CR>
 imap jj <Esc>
 nnoremap <leader>r :registers<CR>
 
-" toggles
+" + toggles
+" Relative or absolute number lines
+function! NumberToggle()
+    if(&nu == 1)
+        set nu!
+        set rnu
+    else
+        set nornu
+        set nu
+    endif
+endfunction
+nnoremap <leader>tl :call NumberToggle()<CR>
 noremap <Leader>tf :set foldenable!<CR>:set foldenable?<CR>
-noremap <leader>tl :set rnu!<CR>
 noremap <leader>th :noh<CR>
 
 " + move lines up and down
