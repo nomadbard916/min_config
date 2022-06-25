@@ -79,6 +79,7 @@ runtime macros/matchit.vim
 " change current working directory to current file
 nnoremap <leader>cd :cd %:p:h<CR>
 imap jj <Esc>
+nnoremap <leader>r :registers<CR>
 
 " + move lines up and down
 " don't map <A> or <M>. it doesn't work.
