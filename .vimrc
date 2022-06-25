@@ -78,8 +78,11 @@ runtime macros/matchit.vim
 nnoremap <leader>cd :cd %:p:h<CR>
 imap jj <Esc>
 nnoremap <leader>r :registers<CR>
+
+" toggles
 noremap <Leader>tf :set foldenable!<CR>:set foldenable?<CR>
 noremap <leader>tl :set rnu!<CR>
+noremap <leader>th :noh<CR>
 
 " + move lines up and down
 " don't map <A> or <M>. it doesn't work.
