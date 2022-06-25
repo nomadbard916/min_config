@@ -77,7 +77,6 @@ runtime macros/matchit.vim
 " change current working directory to current file
 nnoremap <leader>cd :cd %:p:h<CR>
 imap jj <Esc>
-nnoremap <leader>r :registers<CR>
 
 " + toggles
 " Relative or absolute number lines
