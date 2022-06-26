@@ -233,7 +233,7 @@ Plug 'liuchengxu/vista.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'tommcdo/vim-exchange'
 " helps to show marks
-Plug "kshenoy/vim-signature"
+Plug 'kshenoy/vim-signature'
 
 " + PHP-specific plugins
 Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php'}
