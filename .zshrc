@@ -207,8 +207,8 @@ alias cdmc="cd $MIN_CONFIG_PATH"
 # ideavimrc needs to assign IDEAVIMRC_PATH_LOCAL AND IDEAVIMRC_PATH_REMOTE first in ~/.zsh_paths, then just copy
 # TODO: separate local path and remote path for ideavimrc
 # TODO: function to ask for git commit message and push
-alias zcp="/bin/cp ~/.zshrc ~/.zshrc.bak && cp ~/.zshrc $MIN_CONFIG_PATH/.zshrc && cd $MIN_CONFIG_PATH "
-alias vcp="/bin/cp ~/.vimrc ~/.vimrc.bak && cp ~/.vimrc $MIN_CONFIG_PATH/.vimrc && cd $MIN_CONFIG_PATH "
+alias zcp="/bin/cp -f ~/.zshrc ~/.zshrc.bak && cp ~/.zshrc $MIN_CONFIG_PATH/.zshrc && cd $MIN_CONFIG_PATH "
+alias vcp="/bin/cp -f ~/.vimrc ~/.vimrc.bak && cp ~/.vimrc $MIN_CONFIG_PATH/.vimrc && cd $MIN_CONFIG_PATH "
 if [[ -d $IDEAVIMRC_PATH_LOCAL ]] && [[ -d $IDEAVIMRC_PATH_REMOTE ]] ; then
     alias ivcp="/bin/cp -f $IDEAVIMRC_PATH_LOCAL/.ideavimrc $IDEAVIMRC_PATH_LOCAL/.ideavimrc.bak && \
         cp $IDEAVIMRC_PATH_LOCAL/.ideavimrc $IDEAVIMRC_PATH_REMOTE/.ideavimrc"
