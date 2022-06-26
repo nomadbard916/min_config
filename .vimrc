@@ -231,7 +231,6 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'bogado/file-line'
 Plug 'liuchengxu/vista.vim'
 Plug 'junegunn/vim-peekaboo'
-Plug 'terryma/vim-expand-region'
 Plug 'tommcdo/vim-exchange'
 
 
