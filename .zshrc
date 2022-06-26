@@ -202,15 +202,32 @@ alias vimrc="vim ~/.vimrc"
 # You need to export MIN_CONFIG_PATH first to use below aliases. I personally put it in ~/.zsh_paths
 alias cdmc="cd $MIN_CONFIG_PATH"
 
-# Shortcut to publish vimrc and zshrc config by backup first, then  update to MIN_CONFIG_PATH
+# Shortcut to publish vimrc, zshrc, and ideavimrc config by backup first, then: 
+# former two update to MIN_CONFIG_PATH, which is assigned in ~/.zsh_paths.
+# ideavimrc needs to assign IDEAVIMRC_PATH_LOCAL AND IDEAVIMRC_PATH_REMOTE first in ~/.zsh_paths, then just copy
+# TODO: separate local path and remote path for ideavimrc
 # TODO: function to ask for git commit message and push
-alias vcp="/bin/cp -f ~/.vimrc ~/.vimrc.bak && cp ~/.vimrc $MIN_CONFIG_PATH/.vimrc && cd $MIN_CONFIG_PATH "
-alias zcp="/bin/cp -f ~/.zshrc ~/.zshrc.bak && cp ~/.zshrc $MIN_CONFIG_PATH/.zshrc && cd $MIN_CONFIG_PATH "
+alias zcp="/bin/cp ~/.zshrc ~/.zshrc.bak && cp ~/.zshrc $MIN_CONFIG_PATH/.zshrc && cd $MIN_CONFIG_PATH "
+alias vcp="/bin/cp ~/.vimrc ~/.vimrc.bak && cp ~/.vimrc $MIN_CONFIG_PATH/.vimrc && cd $MIN_CONFIG_PATH "
+if [[ -d $IDEAVIMRC_PATH_LOCAL ]] && [[ -d $IDEAVIMRC_PATH_REMOTE ]] ; then
+    alias ivcp="/bin/cp -f $IDEAVIMRC_PATH_LOCAL/.ideavimrc $IDEAVIMRC_PATH_LOCAL/.ideavimrc.bak && \
+        cp $IDEAVIMRC_PATH_LOCAL/.ideavimrc $IDEAVIMRC_PATH_REMOTE/.ideavimrc"
+else
+    echo 'Please assign first $IDEAVIMRC_PATH_LOCAL and $IDEAVIMRC_PATH_REMOTE to make alias "ivcp" work.'
+fi
 
-# shortcut to apply vimrc and zshrc config changes  from git repository after backup
+# shortcut to apply vimrc, zshrc and ideavimr cconfig changes  from git repository after backup
+# ideavimrc needs to assign IDEAVIMRC_PATH first in ~/.zsh_paths, which is assigned in ~/.zsh_paths
+# ideavimrc needs to assign IDEAVIMRC_PATH_LOCAL AND IDEAVIMRC_PATH_REMOTE first in ~/.zsh_paths, then just copy
 ZSHRC_PATH='~/.zshrc'
-alias zca="cd $MIN_CONFIG_PATH && git pull && cp $ZSHRC_PATH $ZSHRC_PATH.bak && cp $MIN_CONFIG_PATH/.zshrc $ZSHRC_PATH && cd - && source $ZSHRC_PATH"
-alias vca="cd $MIN_CONFIG_PATH && git pull && cp ~/.vimrc ~/.vimrc.bak && cp $MIN_CONFIG_PATH/.vimrc ~/.vimrc && cd -"
+alias zca="cd $MIN_CONFIG_PATH && git pull && cp -f $ZSHRC_PATH $ZSHRC_PATH.bak && cp $MIN_CONFIG_PATH/.zshrc $ZSHRC_PATH && cd - && source $ZSHRC_PATH"
+alias vca="cd $MIN_CONFIG_PATH && git pull && cp -f ~/.vimrc ~/.vimrc.bak && cp $MIN_CONFIG_PATH/.vimrc ~/.vimrc && cd -"
+if [[ -d $IDEAVIMRC_PATH_LOCAL ]] && [[ -d $IDEAVIMRC_PATH_REMOTE ]] ; then
+    alias ivca="/bin/cp -f $IDEAVIMRC_PATH_LOCAL/.ideavimrc $IDEAVIMRC_PATH_LOCAL/.ideavimrc.bak && \
+        cp $IDEAVIMRC_PATH_REMOTE/.ideavimrc $IDEAVIMRC_PATH_LOCAL/.ideavimrc"
+else
+    echo 'Please assign first $IDEAVIMRC_PATH_LOCAL and $IDEAVIMRC_PATH_REMOTE to make alias "ivca" work.'
+fi
 
 # useful cli-gui tools
 alias lzd=lazydocker
