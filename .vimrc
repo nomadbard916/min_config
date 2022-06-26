@@ -188,7 +188,6 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 
 Plug 'kamykn/spelunker.vim'
-Plug 'MattesGroeger/vim-bookmarks'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -380,7 +379,6 @@ function AskKeyInputForWhichKey()
     execute "WhichKey ". '"'. input . '"'
 endfunction
 nnoremap <leader>? :call AskKeyInputForWhichKey()<CR>
-nnoremap <silent> m :WhichKey 'm'<CR>
 nnoremap <silent> t :WhichKey 't'<CR>
 nnoremap <silent> \ :WhichKey '\'<CR>
 
