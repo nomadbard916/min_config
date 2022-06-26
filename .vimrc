@@ -273,9 +273,7 @@ call plug#end()
 " ---
 " + use space as easymotion input trigger. 
 " that's why it's not assigned to leader key
-nmap \s <Plug>(easymotion-s)
-nmap \f <Plug>(easymotion-f)
-nmap \b <Plug>(easymotion-b)
+nmap \ <Plug>(easymotion-s)
 
 " + ALE settings.it's the core for linting and LSP features.
 " only do linting when file is saved, as vim is often used as code reader.
