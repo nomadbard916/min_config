@@ -74,9 +74,11 @@ runtime macros/matchit.vim
 " --- 
 " built-in shortcut keys
 " ---
+imap jj <Esc>
+" thought there's peekaboo, we stil need this one to be consitend with intellij
+nmap <leader>r :registers<CR>
 " change current working directory to current file
 nnoremap <leader>cd :cd %:p:h<CR>
-imap jj <Esc>
 
 " + toggles
 " Relative or absolute number lines
