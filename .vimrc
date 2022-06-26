@@ -15,6 +15,10 @@ endif
 " apply vimrc settings immediately
 nnoremap zso :source ~/.vimrc<CR>
 
+" + use spacebar as leader as it's reachable by both hands,
+" and doesn't compromise ',' and ';' for repeating actions. 
+let mapleader = <space>
+
 " + return to last edit position when opening files
 " https://vimhelp.org/usr_05.txt.html#last-position-jump
 autocmd BufReadPost *
@@ -76,7 +80,7 @@ runtime macros/matchit.vim
 " ---
 imap jj <Esc>
 " thought there's peekaboo, we stil need this one to be consitend with intellij
-nmap <leader>r :registers<CR>
+nmap <A-r> :registers<CR>
 " change current working directory to current file
 nnoremap <leader>cd :cd %:p:h<CR>
 
