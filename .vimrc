@@ -60,8 +60,9 @@ let &t_EI = "\e[2 q"
 " pum: PopUp Menu which is triggered by Ctrl-N in insert mode
 set pumheight=16
 set showcmd
-set completeopt=menu,menuone,noselect " don't select the first item.
+set completeopt=menu,menuone
 set shortmess+=c " suppress annoy messages.
+
 
 " keep space from top and bottom
 set scrolloff=2
