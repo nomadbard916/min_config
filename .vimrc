@@ -17,7 +17,7 @@ nnoremap zso :source ~/.vimrc<CR>
 
 " + use spacebar as leader as it's reachable by both hands,
 " and doesn't compromise ',' and ';' for repeating actions. 
-let mapleader = <space>
+let mapleader = ' '
 
 " + return to last edit position when opening files
 " https://vimhelp.org/usr_05.txt.html#last-position-jump
@@ -266,9 +266,9 @@ call plug#end()
 " ---
 " + use space as easymotion input trigger. 
 " that's why it's not assigned to leader key
-nmap <space>s <Plug>(easymotion-s)
-nmap <space>f <Plug>(easymotion-f)
-nmap <space>b <Plug>(easymotion-b)
+nmap \s <Plug>(easymotion-s)
+nmap \f <Plug>(easymotion-f)
+nmap \b <Plug>(easymotion-b)
 
 " + ALE settings.it's the core for linting and LSP features.
 " only do linting when file is saved, as vim is often used as code reader.
