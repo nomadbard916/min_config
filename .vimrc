@@ -60,6 +60,8 @@ let &t_EI = "\e[2 q"
 " pum: PopUp Menu which is triggered by Ctrl-N in insert mode
 set pumheight=16
 set showcmd
+set completeopt=menu,menuone,noselect " don't select the first item.
+set shortmess+=c " suppress annoy messages.
 
 " keep space from top and bottom
 set scrolloff=2
@@ -175,6 +177,8 @@ call plug#begin('~/.vim/plugged')
 
 " Plug 'dense-analysis/ale'
 " + lsp plugins 
+Plug 'skywind3000/vim-auto-popmenu'
+" shows match counts when searching
 Plug 'google/vim-searchindex'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
@@ -398,6 +402,9 @@ let g:rainbow_active = 1
 nmap <C-_> <Plug>CommentaryLine
 vmap <C-_> <Plug>Commentary
 imap <C-_> <Esc><Plug>CommentaryLine
+
+" enable  plugin vim-auto-popmenu for filetypes, '*' for all files.
+let g:apc_enable_ft = { '*':1 }
 
 " + PHP specific settings
 " gh and gd
