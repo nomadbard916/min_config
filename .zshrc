@@ -220,8 +220,8 @@ fi
 # ideavimrc needs to assign IDEAVIMRC_PATH first in ~/.zsh_paths, which is assigned in ~/.zsh_paths
 # ideavimrc needs to assign IDEAVIMRC_PATH_LOCAL AND IDEAVIMRC_PATH_REMOTE first in ~/.zsh_paths, then just copy
 ZSHRC_PATH='~/.zshrc'
-alias zca="cd $MIN_CONFIG_PATH && git pull && cp -f $ZSHRC_PATH $ZSHRC_PATH.bak && cp $MIN_CONFIG_PATH/.zshrc $ZSHRC_PATH && cd - && source $ZSHRC_PATH"
-alias vca="cd $MIN_CONFIG_PATH && git pull && cp -f ~/.vimrc ~/.vimrc.bak && cp $MIN_CONFIG_PATH/.vimrc ~/.vimrc && cd -"
+alias zca="cd $MIN_CONFIG_PATH && git pull && /bin/cp -f $ZSHRC_PATH $ZSHRC_PATH.bak && cp $MIN_CONFIG_PATH/.zshrc $ZSHRC_PATH && cd - && source $ZSHRC_PATH"
+alias vca="cd $MIN_CONFIG_PATH && git pull && /bin/cp -f ~/.vimrc ~/.vimrc.bak && cp $MIN_CONFIG_PATH/.vimrc ~/.vimrc && cd -"
 if [[ -d $IDEAVIMRC_PATH_LOCAL ]] && [[ -d $IDEAVIMRC_PATH_REMOTE ]] ; then
     alias ivca="/bin/cp -f $IDEAVIMRC_PATH_LOCAL/.ideavimrc $IDEAVIMRC_PATH_LOCAL/.ideavimrc.bak && \
         cp $IDEAVIMRC_PATH_REMOTE/.ideavimrc $IDEAVIMRC_PATH_LOCAL/.ideavimrc"
