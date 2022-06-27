@@ -18,9 +18,6 @@ export HISTFILE=~/.zsh_history
 # diaable it for ubuntu
 skip_global_compinit=1
 
-# force use emacs keymap
-bindkey -e
-
 # set ZINIT_HOME for easier manipulation, like ZPLUG_HOME does
 export ZINIT_HOME=$HOME/.local/share/zinit
 ### Added by Zinit's installer
@@ -127,6 +124,8 @@ zinit light Tarrasch/zsh-autoenv
 zinit wait lucid for \
  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     zdharma-continuum/fast-syntax-highlighting
+# must be after autosuggestions and syntax-highlighting
+zinit light softmoth/zsh-vim-mode
 
 # + auto update zinit and plugins
 # the snippets were borrowed from somewhere I forgot, 
