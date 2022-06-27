@@ -15,11 +15,11 @@ endif
 " apply vimrc settings immediately. same as that in .ideavimrc
 nnoremap zso :source ~/.vimrc<CR>
 
-" + use spacebar as leader as it's reachable by both hands,
+" use spacebar as leader as it's reachable by both hands,
 " and doesn't compromise ',' and ';' for repeating actions. 
 let mapleader = ' '
 
-" + return to last edit position when opening files
+" return to last edit position when opening files
 " https://vimhelp.org/usr_05.txt.html#last-position-jump
 autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line('$') |
@@ -82,13 +82,12 @@ runtime macros/matchit.vim
 " built-in shortcut keys
 " ---
 imap jj <Esc>
+nmap U :redo<CR>
 
 " thought there's peekaboo, we stil need this one to be consitend with intellij
 nmap <leader>" :registers<CR>
 " change current working directory to current file
 nnoremap <leader>cd :cd %:p:h<CR>
-
-
 
 " + toggles
 " Relative or absolute number lines
