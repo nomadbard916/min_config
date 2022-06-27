@@ -12,7 +12,7 @@ endif
 " ---
 " global behavior
 " ---
-" apply vimrc settings immediately
+" apply vimrc settings immediately. same as that in .ideavimrc
 nnoremap zso :source ~/.vimrc<CR>
 
 " + use spacebar as leader as it's reachable by both hands,
@@ -101,9 +101,9 @@ function! NumberToggle()
         set nu
     endif
 endfunction
-nnoremap <leader>tl :call NumberToggle()<CR>
-noremap <Leader>tf :set foldenable!<CR>:set foldenable?<CR>
-noremap <leader>th :noh<CR>
+noremap <leader>Tl :call NumberToggle()<CR>
+noremap <Leader>Tf :set foldenable!<CR>:set foldenable?<CR>
+noremap <leader>Th :noh<CR>
 
 " + move lines up and down
 " don't map <A> or <M>. it doesn't work.
