@@ -380,7 +380,6 @@ function AskKeyInputForWhichKey()
 endfunction
 nnoremap <leader>? :call AskKeyInputForWhichKey()<CR>
 nnoremap <silent> t :WhichKey 't'<CR>
-nnoremap <silent> \ :WhichKey '\'<CR>
 
 " + let spelunker handle spell check
 set nospell
