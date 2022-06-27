@@ -122,9 +122,11 @@ vnoremap <C-S-k> :m '<-2<CR>gv=gv
 set tabpagemax=100
 
 nnoremap te :tabedit <C-R>=expand('%:p:h')<CR>/
-nnoremap tn :tabnew<Enter>
+nnoremap to :TabooOpen 
+nnoremap tr :TabooRename 
 nnoremap tc :tabclose<Enter>
-nnoremap to :tabonly
+" meaning 'Close all others'
+nnoremap tC :tabonly
 
 " ,t1 ,t2 ,t3: go specific tab
 for i in range(1, 9)
