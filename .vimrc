@@ -404,6 +404,8 @@ imap <C-_> <Esc><Plug>CommentaryLine
 " enable  plugin vim-auto-popmenu for filetypes, '*' for all files.
 let g:apc_enable_ft = { '*':1 }
 
+" + placehoder for refactoring, maybe should put into language specific sections
+" <leader>r
 " + PHP specific settings
 " gh and gd
 " autocmd Filetype php nnoremap gh :PhpactorHover<Enter>
@@ -427,11 +429,18 @@ autocmd FileType php noremap <Leader>E :call PhpExpandClass()<CR>
 " let g:pymode_options_max_line_length = 88 " use black's rule
 " let g:pymode_options_colorcolumn=1
 "
-" + placehoder for refactoring
-" <leader>r
 
 " + placehoder for testing
 " <leader>t
  
 " + placehoder for git
-" <leader>g
+nmap <leader>ga. !git add .<cr> 
+nmap <leader>gcam !git commit -am ""
+nmap <leader>gp !git push<CR>
+nmap <leader>gl !git pull<CR>
+nmap <leader>gst !git status<CR>
+nmap <leader>gdf !git diff<CR>
+nmap <leader>gsl !git stash list<CR>
+nmap <leader>gss !git stash save<CR>
+nmap <leader>gsa !git stash apply<CR>
+
