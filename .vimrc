@@ -250,7 +250,8 @@ Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python'}
 " auto venv
 "
 " don't use ale as lsp-settings is too convenient.
-" however stand-alone refactoring tools need to be installed.
+" however stand-alone refactoring tools need to be installed, 
+" and language-specific refactors are better.
 
 " + aborted plugins
 "Plug 'SirVer/ultisnips' ...... it may be very slow for nvim
