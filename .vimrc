@@ -427,3 +427,6 @@ autocmd FileType php noremap <Leader>E :call PhpExpandClass()<CR>
 
 " + placehoder for testing
 " <leader>t
+ 
+" + placehoder for git
+" <leader>g
