@@ -420,7 +420,7 @@ function! IPhpExpandClass()
 endfunction
 
 autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
-autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
+autocmd FileType php noremap <Leader>E :call PhpExpandClass()<CR>
 
 " + python-mode settings
 " let g:pymode_options_max_line_length = 88 " use black's rule
