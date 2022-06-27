@@ -248,6 +248,9 @@ Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python'}
 " trailing-white-space
 " vim-test
 " auto venv
+"
+" don't use ale as lsp-settings is too convenient.
+" however stand-alone refactoring tools need to be installed.
 
 " + aborted plugins
 "Plug 'SirVer/ultisnips' ...... it may be very slow for nvim
@@ -259,11 +262,6 @@ Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python'}
 " Plug 'ervandew/supertab' " just no need to use it when familiar with c-n c-p
 
 " + Themes
-" Plug 'moskytw/luthadel.vim', {'as': 'luthadel'}
-" Plug 'joshdick/onedark.vim'
-" Plug 'cocopon/iceberg.vim'
-" Plug 'arcticicestudio/nord-vim'
-" Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'haishanh/night-owl.vim'
 call plug#end()
 
@@ -286,9 +284,7 @@ imap <c-space> <Plug>(asyncomplete_force_refresh)
 
 
 " gh and gd
-" no, gh if for vscodevim only. 
-" we need to figure out another key binding but not yet found
-" nnoremap gh :LspHover<Enter>
+nnoremap gh :LspHover<Enter>
 nnoremap gd :LspDefinition<Enter>
  
 " + custom themes must be put here after plugins are called
@@ -424,3 +420,9 @@ autocmd FileType php noremap <Leader>E :call PhpExpandClass()<CR>
 " + python-mode settings
 " let g:pymode_options_max_line_length = 88 " use black's rule
 " let g:pymode_options_colorcolumn=1
+"
+" + placehoder for refactoring
+" <leader>r
+
+" + placehoder for testing
+" <leader>t
