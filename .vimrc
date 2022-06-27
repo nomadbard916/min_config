@@ -84,6 +84,11 @@ runtime macros/matchit.vim
 imap jj <Esc>
 nmap U :redo<CR>
 
+nmap zh ^
+imap zh <Esc>I
+nmap zl $
+imap zl <End>
+
 " thought there's peekaboo, we stil need this one to be consitend with intellij
 nmap <leader>" :registers<CR>
 " change current working directory to current file
