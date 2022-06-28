@@ -200,7 +200,9 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 
-Plug 'kamykn/spelunker.vim'
+" spelunker's default key binding uses 'z', conflict with many current ones
+" TODO: configure built-in spell checks
+" Plug 'kamykn/spelunker.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
