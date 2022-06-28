@@ -322,8 +322,8 @@ command! ProjectFiles execute 'Files' s:find_git_root()
 nnoremap <leader>a :Commands<Enter> 
 " VSCode style, meaning 'ctrl-p'. search current folder by default, :cd to other
 nnoremap <leader>p :ProjectFiles<Enter>
-" search file with path to be specified, pwd if not assigned
-nnoremap <leader>sf :Files
+" TODO: these two should be refactored to using LSP, 
+" but still need to consider when LSP not enabled.
 " search tags, global
 nnoremap <leader>st :Tags<Enter>
 " search tags, current buffer
