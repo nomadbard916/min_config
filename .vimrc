@@ -445,8 +445,10 @@ autocmd FileType php noremap <Leader>E :call PhpExpandClass()<CR>
 " + placehoder for git
 nmap <leader>ga. !git add .<cr> 
 nmap <leader>gcam !git commit -am ""
+nmap <leader>gck !git checkout 
 nmap <leader>gp !git push<CR>
 nmap <leader>gl !git pull<CR>
+nmap <leader>glog !git log<CR>
 nmap <leader>gst !git status<CR>
 nmap <leader>gdf !git diff<CR>
 nmap <leader>gsl !git stash list<CR>
