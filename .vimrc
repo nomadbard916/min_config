@@ -57,10 +57,17 @@ set listchars=tab:▹\ ,trail:▵
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
+" + popup menu
 " pum: PopUp Menu which is triggered by Ctrl-N in insert mode
 set pumheight=16
 set showcmd
-set completeopt=menu,menuone
+" The default is ".,w,b,u,t,i", which means to scan:
+" current buffer, buffers in other windows, other loaded buffers, 
+" unloaded buffers, tags, included files.
+" let's diable 't' here as 'scanning tags' destroys performance 
+" and we are not actually using ctags when lsp's here
+set complete-=t
+set completeopt=menu,menuone,preview,noselect
 set shortmess+=c " suppress annoy messages.
 
 
