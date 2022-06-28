@@ -413,29 +413,32 @@ let g:apc_enable_ft = { '*':1 }
 
 " + placehoder for refactoring, maybe should put into language specific sections
 " <leader>r
+ 
 " + PHP specific settings
-" gh and gd
-" autocmd Filetype php nnoremap gh :PhpactorHover<Enter>
-" autocmd Filetype php nnoremap gd :PhpactorGotoDefinition<Enter>
+augroup php
+    " gh and gd
+    " autocmd Filetype php nnoremap gh :PhpactorHover<Enter>
+    " autocmd Filetype php nnoremap gd :PhpactorGotoDefinition<Enter>
+    "
+    " PHP namespace: 'leader u' to insert 'Use' and 'leader e' to expand full name
+    function! IPhpInsertUse()
+        call PhpInsertUse()
+        call feedkeys('a',  'n')
+    endfunction
 
-" PHP namespace: 'leader u' to insert 'Use' and 'leader e' to expand full name
-function! IPhpInsertUse()
-    call PhpInsertUse()
-    call feedkeys('a',  'n')
-endfunction
+    function! IPhpExpandClass()
+        call PhpExpandClass()
+        call feedkeys('a', 'n')
+    endfunction
 
-function! IPhpExpandClass()
-    call PhpExpandClass()
-    call feedkeys('a', 'n')
-endfunction
-
-autocmd FileType php nnoremap <Leader>u :call PhpInsertUse()<CR>
-autocmd FileType php nnoremap <Leader>E :call PhpExpandClass()<CR>
+    autocmd FileType php nnoremap <Leader>u :call PhpInsertUse()<CR>
+    autocmd FileType php nnoremap <Leader>E :call PhpExpandClass()<CR>
+augroup END
 
 " + python-mode settings
 " let g:pymode_options_max_line_length = 88 " use black's rule
 " let g:pymode_options_colorcolumn=1
-"
+
 
 " + placehoder for testing
 " <leader>t
