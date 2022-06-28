@@ -124,8 +124,6 @@ zinit light Tarrasch/zsh-autoenv
 zinit wait lucid for \
  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     zdharma-continuum/fast-syntax-highlighting
-# must be after autosuggestions and syntax-highlighting
-zinit light softmoth/zsh-vim-mode
 
 # + auto update zinit and plugins
 # the snippets were borrowed from somewhere I forgot, 
