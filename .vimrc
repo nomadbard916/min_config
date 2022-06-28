@@ -248,6 +248,7 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'tommcdo/vim-exchange'
 " helps to show marks
 Plug 'kshenoy/vim-signature'
+Plug 'voldikss/vim-browser-search'
 
 " + PHP-specific plugins
 Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php'}
