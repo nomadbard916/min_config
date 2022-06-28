@@ -88,13 +88,13 @@ runtime macros/matchit.vim
 " --- 
 " built-in shortcut keys
 " ---
-imap jj <Esc>
-nmap U :redo<CR>
+inoremap jj <Esc>
+nnoremap U :redo<CR>
 
-nmap zh ^
-imap zh <Esc>I
-nmap zl $
-imap zl <End>
+nnoremap zh ^
+inoremap zh <Esc>I
+nnoremap zl $
+inoremap zl <End>
 
 " thought there's peekaboo, we stil need this one to be consitend with intellij
 nmap <leader>" :registers<CR>
@@ -112,9 +112,9 @@ function! NumberToggle()
         set nu
     endif
 endfunction
-noremap <leader>Tl :call NumberToggle()<CR>
-noremap <Leader>Tf :set foldenable!<CR>:set foldenable?<CR>
-noremap <leader>Th :noh<CR>
+nnoremap <leader>Tl :call NumberToggle()<CR>
+nnoremap <Leader>Tf :set foldenable!<CR>:set foldenable?<CR>
+nnoremap <leader>Th :noh<CR>
 
 " + move lines up and down
 " don't map <A> or <M>. it doesn't work.
@@ -288,7 +288,7 @@ call plug#end()
 " ---
 " + use space as easymotion input trigger. 
 " that's why it's not assigned to leader key
-nmap \ <Plug>(easymotion-s)
+nnoremap \ <Plug>(easymotion-s)
 
 " + ALE settings.it's the core for linting and LSP features.
 " only do linting when file is saved, as vim is often used as code reader.
@@ -339,8 +339,8 @@ nnoremap <leader>ss :Ag<Enter>
 
 " + search with Google
 " may not be applicable with WSL as it cannot find browser
-nmap <Leader>sg <Plug>SearchNormal
-vmap <Leader>sg <Plug>SearchVisual
+nnoremap <Leader>sg <Plug>SearchNormal
+vnoremap <Leader>sg <Plug>SearchVisual
 
 " + use NERDTree as explorer
 " 'explorer toggle'
@@ -394,11 +394,6 @@ endfunction
 nnoremap <leader>? :call AskKeyInputForWhichKey()<CR>
 nnoremap <silent> t :WhichKey 't'<CR>
 
-" + let spelunker handle spell check
-set nospell
-let g:enable_spelunker_vim = 0 " turn off on start
-
-
 " + vim-highlightedyank settings
 let g:highlightedyank_highlight_duration = 1000
 if !exists('##TextYankPost')
@@ -434,8 +429,8 @@ function! IPhpExpandClass()
     call feedkeys('a', 'n')
 endfunction
 
-autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
-autocmd FileType php noremap <Leader>E :call PhpExpandClass()<CR>
+autocmd FileType php nnoremap <Leader>u :call PhpInsertUse()<CR>
+autocmd FileType php nnoremap <Leader>E :call PhpExpandClass()<CR>
 
 " + python-mode settings
 " let g:pymode_options_max_line_length = 88 " use black's rule
