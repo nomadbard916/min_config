@@ -8,6 +8,10 @@ fi
 # + global settings
 export LANG='en_US.UTF-8'
 
+# use both emacs and vim key binding
+bindkey -e
+bindkey -v
+
 # use bash default value for history
 export HISTSIZE=1000
 export SAVEHIST=2000
@@ -124,6 +128,9 @@ zinit light Tarrasch/zsh-autoenv
 zinit wait lucid for \
  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     zdharma-continuum/fast-syntax-highlighting
+
+# 'softmoth/zsh-vim-mode' and 'softmoth/zsh-vim-mode' both break autosugestion
+
 
 # + auto update zinit and plugins
 # the snippets were borrowed from somewhere I forgot, 
