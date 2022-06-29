@@ -112,9 +112,9 @@ function! NumberToggle()
         set nu
     endif
 endfunction
-nnoremap <leader>Tl :call NumberToggle()<CR>
-nnoremap <Leader>Tf :set foldenable!<CR>:set foldenable?<CR>
-nnoremap <leader>Th :noh<CR>
+nnoremap Tl :call NumberToggle()<CR>
+nnoremap Tf :set foldenable!<CR>:set foldenable?<CR>
+nnoremap Th :noh<CR>
 
 " + move lines up and down
 " don't map <A> or <M>. it doesn't work.
