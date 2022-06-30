@@ -156,7 +156,7 @@ set tabstop=4
 set expandtab
 set smarttab
 set mouse=a
-
+set belloff=all
 set splitright
 
 set wildmenu
