@@ -253,7 +253,7 @@ Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php'}
 " Plug 'adoy/vim-php-refactoring-toolbox'
 
 " + Python specific plugins
-" Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python'}
 
 
@@ -436,8 +436,8 @@ augroup php
 augroup END
 
 " + python-mode settings
-" let g:pymode_options_max_line_length = 88 " use black's rule
-" let g:pymode_options_colorcolumn=1
+let g:pymode_options_max_line_length = 88 " use black's rule
+let g:pymode_options_colorcolumn=1
 
 
 " + placehoder for testing
