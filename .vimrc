@@ -214,7 +214,7 @@ if has('nvim') || has('patch-8.0.902')
 else
     Plug 'mhinz/vim-signify', { 'branch': 'legacy'  }
 endif
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+" Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'jbgutierrez/vim-better-comments'
@@ -288,7 +288,7 @@ call plug#end()
 " ---
 " + use space as easymotion input trigger. 
 " that's why it's not assigned to leader key
-nnoremap \ <Plug>(easymotion-s)
+nmap \ <Plug>(easymotion-s)
 
 " + ALE settings.it's the core for linting and LSP features.
 " only do linting when file is saved, as vim is often used as code reader.
