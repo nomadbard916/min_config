@@ -92,7 +92,7 @@ inoremap jj <Esc>
 nnoremap U :redo<CR>
 
 nnoremap zh ^
-inoremap zh <Home>
+inoremap zh <Esc>i
 nnoremap zl $
 inoremap zl <End>
 
