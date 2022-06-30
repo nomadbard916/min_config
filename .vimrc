@@ -200,9 +200,6 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 
-" spelunker's default key binding uses 'z', conflict with many current ones
-" TODO: configure built-in spell checks
-" Plug 'kamykn/spelunker.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -278,6 +275,9 @@ Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python'}
 " Plug 'ctrlpvim/ctrlp.vim' ......it's very slow and fzf can do the same
 " Plug 'Yggdroot/indentLine' " this is too ugly
 " Plug 'ervandew/supertab' " just no need to use it when familiar with c-n c-p
+" spelunker's default key binding uses 'z', conflict with many current ones
+" TODO: configure built-in spell checks
+" Plug 'kamykn/spelunker.vim'
 
 " + Themes
 Plug 'haishanh/night-owl.vim'
@@ -443,16 +443,19 @@ augroup END
 " + placehoder for testing
 " <leader>t
  
-" + placehoder for git
-nmap <leader>ga. !git add .<cr> 
-nmap <leader>gcam !git commit -am ""
-nmap <leader>gck !git checkout 
-nmap <leader>gp !git push<CR>
-nmap <leader>gl !git pull<CR>
-nmap <leader>glog !git log<CR>
-nmap <leader>gst !git status<CR>
-nmap <leader>gdf !git diff<CR>
-nmap <leader>gsl !git stash list<CR>
-nmap <leader>gss !git stash save<CR>
-nmap <leader>gsa !git stash apply<CR>
+" + Git commands, mostly with fugitive
+nnoremap <leader>ga. :Git add .<CR>
+nnoremap <leader>gcam :Git commit ""
+nnoremap <leader>gcam :Git commit -am ""
+nnoremap <leader>gck :Git checkout
+nnoremap <leader>gp :Git push<CR>
+nnoremap <leader>gl :Git pull<CR>
+" git status
+nnoremap <leader>gst :below Git<CR>
+nnoremap <leader>glog :below Git log<CR>
+nnoremap <leader>gb :Git blame<CR>
+nnoremap <leader>gdf :below Git diff<CR>
+nnoremap <leader>gsl !git stash list<CR>
+nnoremap <leader>gss !git stash save<CR>
+nnoremap <leader>gsa !git stash apply<CR>
 
