@@ -141,12 +141,11 @@ for i in range(1, 9)
 endfor
 
 " + open terminal
-nnoremap <leader>` :terminal<Enter>
-" shortcut to close terminal which had its own namespace for commands
-" it may cause starnge arrow key behavior with single escape, ref.:
-" https://vi.stackexchange.com/questions/31645/weird-arrow-key-behaviour-in-fzf-vim-terminal-mode/33177
-" :tnoremap <Esc><Esc> <C-\><C-n>:q!<CR>
-" don't use this, it breaks fzf.vim's popup. just use <c-d> or exit
+nnoremap <leader>` :below terminal<Enter>
+" shortcut to close terminal: <c-d>, which had its own namespace for commands
+" don't use this :tnoremap <Esc><Esc> <C-\><C-n>:q!<CR>
+" it breaks fzf.vim's popup. just use <c-d> or exit
+" ref.: https://vi.stackexchange.com/questions/31645/weird-arrow-key-behaviour-in-fzf-vim-terminal-mode/33177
  
 " --- 
 " behavior 
