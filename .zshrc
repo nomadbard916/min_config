@@ -213,10 +213,10 @@ alias cdmc="cd $MIN_CONFIG_PATH"
 # TODO: function to ask for git commit message and push
 
 zcp(){
-     /bin/cp -f ~/.zshrc ~/.zshrc.bak && cp ~/.zshrc $MIN_CONFIG_PATH/.zshrc && cd $MIN_CONFIG_PATH && git commit -am '$1' && git push
+     /bin/cp -f ~/.zshrc ~/.zshrc.bak && cp ~/.zshrc $MIN_CONFIG_PATH/.zshrc && cd $MIN_CONFIG_PATH && git commit -am $1 && git push
 }
 vcp(){
-    /bin/cp -f ~/.vimrc ~/.vimrc.bak && cp ~/.vimrc $MIN_CONFIG_PATH/.vimrc && cd $MIN_CONFIG_PATH && git commit -am '$1' && git push
+    /bin/cp -f ~/.vimrc ~/.vimrc.bak && cp ~/.vimrc $MIN_CONFIG_PATH/.vimrc && cd $MIN_CONFIG_PATH && git commit -am $1 && git push
 }
 # alias zcp="zcp_helper"
 # alias vcp="vcp_helper"
