@@ -453,8 +453,8 @@ nnoremap <leader>gl :Git pull<CR>
 " git status
 nnoremap <leader>gst :below Git<CR>
 nnoremap <leader>glog :below Git log<CR>
-nnoremap <leader>gblame :Git blame<CR>
-nnoremap <leader>gbrowse :GBrowse<CR>
+nnoremap <leader>gb :Git blame<CR>
+nnoremap <leader>gh :GBrowse<CR>
 nnoremap <leader>gdf :below Git diff<CR>
 nnoremap <leader>gsl !git stash list<CR>
 nnoremap <leader>gss !git stash save<CR>
