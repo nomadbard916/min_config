@@ -224,9 +224,9 @@ ZSHRC_PATH='~/.zshrc'
 alias zca="cd $MIN_CONFIG_PATH && git pull \
     && /bin/cp -f $ZSHRC_PATH $ZSHRC_PATH.bak && cp $MIN_CONFIG_PATH/.zshrc $ZSHRC_PATH  \
     && cd - && source $ZSHRC_PATH"
-alias vca="cd $MIN_CONFIG_PATH && git pull && \
-    /bin/cp -f ~/.vimrc ~/.vimrc.bak && cp $MIN_CONFIG_PATH/.vimrc ~/.vimrc && \ 
-    cd -"
+alias vca="cd $MIN_CONFIG_PATH && git pull \
+    && /bin/cp -f ~/.vimrc ~/.vimrc.bak && cp $MIN_CONFIG_PATH/.vimrc ~/.vimrc \
+    && cd -"
 
 # useful cli-gui tools
 alias lzd=lazydocker
