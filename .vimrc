@@ -445,7 +445,6 @@ let g:pymode_options_colorcolumn=1
  
 " + Git commands, mostly with fugitive
 nnoremap <leader>ga. :Git add .<CR>
-nnoremap <leader>gcam :Git commit ""
 nnoremap <leader>gcam :Git commit -am ""
 nnoremap <leader>gck :Git checkout
 nnoremap <leader>gp :Git push<CR>
