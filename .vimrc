@@ -98,8 +98,6 @@ inoremap zl <End>
 
 " thought there's peekaboo, we stil need this one to be consitend with intellij
 nmap <leader>" :registers<CR>
-" change current working directory to current file
-nnoremap <leader>cd :cd %:p:h<CR>
 
 " + toggles
 " Relative or absolute number lines
@@ -115,6 +113,9 @@ endfunction
 nnoremap Tl :call NumberToggle()<CR>
 nnoremap Tf :set foldenable!<CR>:set foldenable?<CR>
 nnoremap Th :noh<CR>
+
+" change current working directory to current file
+nnoremap Td :cd %:p:h<CR>
 
 " + move lines up and down
 " don't map <A> or <M>. it doesn't work.
