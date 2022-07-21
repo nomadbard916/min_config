@@ -233,6 +233,8 @@ alias lzd=lazydocker
 alias lzg=lazygit
 alias ptp=ptpython --config-file ~/.config/ptpython/config.py
 
+# force override behavior of built-in gcam to fit that in IDEs
+alias gcam=git add .; git commit -am 
 
 # it's too slow, don't use.
 # eval $(thefuck --alias)
