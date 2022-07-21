@@ -56,14 +56,14 @@ setopt complete_in_word # more intuitive completions
 setopt no_beep # BEEP
 setopt extended_glob # better globs
 setopt extended_history # better history
-# setopt glob_complete # (see manual for description & tradeoffs)
+setopt glob_complete # (see manual for description & tradeoffs)
 setopt glob_star_short # ** means **/*, **/ means directory only **
 setopt hist_expire_dups_first # don't fill your history as quickly with junk
 setopt hist_ignore_space # ` command` doesn't save to history
 setopt hist_subst_pattern # better globs / parameter expansion
 setopt hist_reduce_blanks # `a  b` normalizes to `a b` in history
 setopt hist_verify # reduce oops I sudoed the wrong thing
-# setopt hist_ignore_all_dups # If a new command line being added to the history list duplicates an older one, the older command is removed from the list (even if it is not the previous event).
+setopt hist_ignore_all_dups # If a new command line being added to the history list duplicates an older one, the older command is removed from the list (even if it is not the previous event).
 setopt inc_append_history        # Write to the history file immediately, not when the shell exits.
 setopt share_history             # Share history between all sessions.
 setopt interactive_comments # so pasting live to test works
@@ -231,6 +231,8 @@ alias vca="cd $MIN_CONFIG_PATH && git pull \
 # useful cli-gui tools
 alias lzd=lazydocker
 alias lzg=lazygit
+alias ptp=ptpython --config-file ~/.config/ptpython/config.py
+
 
 # it's too slow, don't use.
 # eval $(thefuck --alias)
