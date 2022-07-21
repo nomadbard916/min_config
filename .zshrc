@@ -231,7 +231,7 @@ alias vca="cd $MIN_CONFIG_PATH && git pull \
 # useful cli-gui tools
 alias lzd=lazydocker
 alias lzg=lazygit
-alias ptp=ptpython --config-file ~/.config/ptpython/config.py
+alias ptp='ptpython --config-file ~/.config/ptpython/config.py'
 
 
 # it's too slow, don't use.
