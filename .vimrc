@@ -1,3 +1,6 @@
+" to prevent from overlapping of previous vimrc version
+:mapclear
+
 set nocompatible  " no compatible with vi-mode
 filetype off
 filetype plugin indent on
