@@ -83,8 +83,6 @@ zinit ice depth"1"; zinit light romkatv/powerlevel10k
 # plugins with installable packages
 zinit ice as"completion"; zinit snippet OMZP::ag/_ag
 zinit ice lucid wait='3'; zinit snippet OMZP::fzf
-# needs Pygments (default) or Chroma
-# zinit ice lucid wait='3'; zinit snippet OMZP::colorize  
 
 # commands
 zinit light agkozak/zsh-z
@@ -96,7 +94,6 @@ zinit snippet OMZP::safe-paste
 zinit snippet OMZL::clipboard.zsh
 zinit snippet OMZP::copybuffer
 zinit snippet OMZP::copypath
-# zinit snippet OMZP::extract
 
 # terminal
 zinit snippet OMZL::theme-and-appearance.zsh
@@ -105,11 +102,10 @@ zinit snippet OMZL::theme-and-appearance.zsh
 zinit snippet OMZP::git
 zinit ice as"completion"; zinit snippet OMZP::docker/_docker
 zinit snippet OMZP::docker-compose
-# zinit snippet OMZP::aws
+zinit snippet OMZP::aws
 
-# php
-zinit snippet OMZP::composer
-zinit snippet OMZP::laravel
+# node/js/ts
+zinit light ntnyq/omz-plugin-pnpm
 
 # Python
 zinit snippet OMZP::python

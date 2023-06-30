@@ -54,7 +54,6 @@ set linebreak
 set showmatch
 set hlsearch " default off in vim, but default on in nvim
 set list
-set listchars=tab:▹\ ,trail:▵
 
 " set cursor shape for different modes
 let &t_SI = "\e[6 q"
@@ -251,14 +250,17 @@ Plug 'tommcdo/vim-exchange'
 Plug 'kshenoy/vim-signature'
 Plug 'voldikss/vim-browser-search'
 
-" + PHP-specific plugins
-Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php'}
-" Plug 'phpactor/phpactor', {'for': 'php', 'tag': '+', 'do': 'composer install --no-dev -o'}
-" Plug 'adoy/vim-php-refactoring-toolbox'
 
 " + Python specific plugins
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python'}
+
+
+" + js/ts specific plugins
+Plug 'pangloss/vim-javascript', { 'for': 'javascript'}
+Plug 'leafgarland/typescript-vim'
+
+let g:javascript_plugin_jsdoc = 1
 
 
 " + plugins to try
@@ -374,8 +376,9 @@ endif
 
 " vista settings
 let g:vista_executive_for = {
-    \ 'php': 'vim_lsp',
     \ 'python': 'vim_lsp',
+    \ 'typescript': 'vim_lsp',
+    \ 'javascript': 'vim_lsp',
 \ }
 let g:vista_ignore_kinds = ['Variable']
 nnoremap <leader>o :Vista!!<cr>
@@ -421,27 +424,6 @@ let g:apc_enable_ft = { '*':1 }
 " + placehoder for refactoring, maybe should put into language specific sections
 " <leader>r
  
-" + PHP specific settings
-augroup php
-    " gh and gd
-    " autocmd Filetype php nnoremap gh :PhpactorHover<Enter>
-    " autocmd Filetype php nnoremap gd :PhpactorGotoDefinition<Enter>
-    "
-    " PHP namespace: 'leader u' to insert 'Use' and 'leader e' to expand full name
-    function! IPhpInsertUse()
-        call PhpInsertUse()
-        call feedkeys('a',  'n')
-    endfunction
-
-    function! IPhpExpandClass()
-        call PhpExpandClass()
-        call feedkeys('a', 'n')
-    endfunction
-
-    autocmd FileType php nnoremap <Leader>u :call PhpInsertUse()<CR>
-    autocmd FileType php nnoremap <Leader>E :call PhpExpandClass()<CR>
-augroup END
-
 " + python-mode settings
 let g:pymode_options_max_line_length = 88 " use black's rule
 let g:pymode_options_colorcolumn=1
