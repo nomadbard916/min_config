@@ -81,7 +81,7 @@ setopt no_list_ambiguous
 zinit ice depth"1"; zinit light romkatv/powerlevel10k
 
 # plugins with installable packages
-zinit ice as"completion"; zinit snippet OMZP::ag/_ag
+# zinit ice as"completion"; zinit snippet OMZP::ag/_ag
 zinit ice lucid wait='3'; zinit snippet OMZP::fzf
 
 # commands
@@ -100,7 +100,7 @@ zinit snippet OMZL::theme-and-appearance.zsh
 
 # systematic
 zinit snippet OMZP::git
-zinit ice as"completion"; zinit snippet OMZP::docker/_docker
+# zinit ice as"completion"; zinit snippet OMZP::docker/_docker
 zinit snippet OMZP::docker-compose
 zinit snippet OMZP::aws
 
