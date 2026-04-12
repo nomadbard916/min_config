@@ -174,7 +174,7 @@ if ! which zsystem &> /dev/null || zsystem flock -t 1 $lockfile; then
 fi
 
 # use ag for FZF and ignore some files
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
