@@ -110,8 +110,6 @@ zinit light ntnyq/omz-plugin-pnpm
 # Python
 zinit snippet OMZP::python
 zinit snippet OMZP::pip
-zinit snippet OMZP::pipenv
-zinit snippet OMZP::poetry
 
 # zsh installable plugins
 zinit ice lucid wait='0' atload='_zsh_autosuggest_start'; zinit light zsh-users/zsh-autosuggestions
@@ -183,8 +181,6 @@ export EDITOR='vim'
 # export ARCHFLAGS="-arch x86_64"
 
 # + set ailases
-alias ptt="ssh bbsu@ptt.cc"
-
 # separate aliases
 if [ -f ~/.zsh_aliases ]; then
     source ~/.zsh_aliases
